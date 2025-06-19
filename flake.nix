@@ -4,7 +4,8 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
   };
 
-  outputs = { self, nixpkgs }@inputs:
+  outputs =
+    { self, nixpkgs }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -15,18 +16,18 @@
         overlays = [ ];
       };
     in
-      {
+    {
       formatter.${system} = pkgs.nixfmt-tree;
-        nixosConfigurations = {
-          djohnson-thinkpad-nixos = nixpkgs.lib.nixosSystem {
-            specialArgs = {
-              inherit pkgs;
-              inherit system;
-            };
-            modules = [
-              ./configurations/configuration.nix
-            ];
+      nixosConfigurations = {
+        djohnson-thinkpad-nixos = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit pkgs;
+            inherit system;
           };
+          modules = [
+            ./configurations/configuration.nix
+          ];
         };
       };
+    };
 }
