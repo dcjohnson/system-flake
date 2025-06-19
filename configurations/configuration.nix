@@ -51,7 +51,7 @@
     enable = true;
     wayland = true;
   };
-  services.displayManager.defaultSession = "";
+  services.displayManager.defaultSession = "gnome";
   services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
@@ -100,10 +100,9 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    nvim
+    neovim
     git
     ntfs3g
-    go
     bftpd
     wget
     curl
