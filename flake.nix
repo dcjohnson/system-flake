@@ -16,6 +16,7 @@
       };
     in
       {
+      formatter.${system} = pkgs.nixfmt-tree;
         nixosConfigurations = {
           djohnson-thinkpad-nixos = nixpkgs.lib.nixosSystem {
             specialArgs = {

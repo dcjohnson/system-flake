@@ -94,20 +94,43 @@
   };
 
   # Install firefox.
-  programs.firefox.enable = true;
+  programs = {
+    firefox.enable = true;
+    tmux.enable = true;
+  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
     neovim
+    kitty
     git
     ntfs3g
     bftpd
     wget
     curl
     alsa-utils
-    gcc14
+  ];
+
+  environment.gnome.excludePackages = with pkgs; [
+    baobab      # disk usage analyzer
+    cheese      # photo booth
+    eog         # image viewer
+    epiphany    # web browser
+    gedit       # text editor
+    simple-scan # document scanner
+    totem       # video player
+    yelp        # help viewer
+    evince      # document viewer
+    file-roller # archive manager
+    geary       # email client
+    seahorse    # password manager
+
+    # these should be self explanatory
+    gnome-calculator gnome-calendar gnome-characters gnome-clocks gnome-contacts
+    gnome-font-viewer gnome-logs gnome-maps gnome-music gnome-screenshot
+    gnome-system-monitor gnome-weather gnome-connections
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
