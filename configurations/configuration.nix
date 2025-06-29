@@ -108,6 +108,7 @@
     neovim
     kitty
     git
+    openssl
     ntfs3g
     bftpd
     wget
