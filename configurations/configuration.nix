@@ -114,6 +114,8 @@
     wget
     curl
     alsa-utils
+    texliveFull
+    gnumake
   ];
 
   environment.gnome.excludePackages = with pkgs; [
