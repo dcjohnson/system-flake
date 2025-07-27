@@ -19,13 +19,21 @@
     {
       formatter.${system} = pkgs.nixfmt-tree;
       nixosConfigurations = {
+        nas-nixos = nixpkgs.lib.nixosSystem { 
+	  specialArgs = {
+	    inherit pkgs system;
+	  };
+          modules = [
+	    ./configurations/nas-nixos/configuration.nix
+	  ];
+	};
         djohnson-thinkpad-nixos = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit pkgs;
             inherit system;
           };
           modules = [
-            ./configurations/configuration.nix
+            ./configurations/djohnson-thinkpad-nixos/configuration.nix
           ];
         };
       };
