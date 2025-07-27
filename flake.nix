@@ -2,12 +2,16 @@
   description = "My system flake";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
-     disko.url = "github:nix-community/disko";
+    disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
-    };
+  };
 
   outputs =
-    { self, nixpkgs, disko }@inputs:
+    {
+      self,
+      nixpkgs,
+      disko,
+    }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -26,7 +30,7 @@
             inherit pkgs system;
           };
           modules = [
-	  disko.nixosModules.disko
+            disko.nixosModules.disko
             (
               { pkgs, modulesPath, ... }:
               {
@@ -37,12 +41,12 @@
               }
             )
             ./configurations/nas-nixos/configuration.nix
-	    
-	    ./configurations/nas-nixos/disko-config.nix 
-	    {
-	      _module.args.disks = [ "/dev/nvme0n1" ];
+
+            ./configurations/nas-nixos/disko-config.nix
+            {
+              _module.args.disks = [ "/dev/nvme0n1" ];
             }
-	    ];
+          ];
         };
         djohnson-thinkpad-nixos = nixpkgs.lib.nixosSystem {
           specialArgs = {
