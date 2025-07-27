@@ -14,11 +14,12 @@
     }@inputs:
     let
       system = "x86_64-linux";
-      pkgs = import nixpkgs {
+      dpkgs = import nixpkgs {
         inherit system;
         config = {
           allowUnfree = true;
         };
+        hostPlatform = system;
         overlays = [
           (final: prev: {
             djohnson-packages = import ./pkgs/packages.nix {
@@ -27,15 +28,15 @@
           })
         ];
       };
+
     in
     {
-      formatter.${system} = pkgs.nixfmt-tree;
+      formatter.${system} = dpkgs.nixfmt-tree;
       nixosConfigurations = {
         nas-nixos = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit pkgs system;
-          };
+          pkgs = dpkgs;
           modules = [
+            # nixpkgs.nixosModules.readOnlyPkgs
             disko.nixosModules.disko
             (
               { pkgs, modulesPath, ... }:
@@ -53,11 +54,9 @@
           ];
         };
         djohnson-thinkpad-nixos = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit pkgs;
-            inherit system;
-          };
+          pkgs = dpkgs;
           modules = [
+            nixpkgs.nixosModules.readOnlyPkgs
             ./configurations/djohnson-thinkpad-nixos/configuration.nix
           ];
         };

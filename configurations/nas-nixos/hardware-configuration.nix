@@ -24,24 +24,6 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  #fileSystems."/" = {
-  #  device = "/dev/disk/by-uuid/ce970720-96a1-456c-8025-006db6af1bc9";
-  #  fsType = "ext4";
-  #};
-
-  #fileSystems."/boot" = {
-  #  device = "/dev/disk/by-uuid/A697-96FF";
-  #  fsType = "vfat";
-  #  options = [
-  #    "fmask=0077"
-  #    "dmask=0077"
-  #  ];
-  #};
-
-  #swapDevices = [
-  #  { device = "/dev/disk/by-uuid/9eb37884-8ca3-43cc-a6d4-028c8eeab6ee"; }
-  #];
-
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction
@@ -50,6 +32,5 @@
   # networking.interfaces.enp1s0.useDHCP = lib.mkDefault true;
   # networking.interfaces.enp2s0.useDHCP = lib.mkDefault true;
 
-  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
