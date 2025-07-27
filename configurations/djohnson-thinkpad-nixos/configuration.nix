@@ -112,6 +112,7 @@
     openssl
     ntfs3g
     bftpd
+    file
     wget
     curl
     plan9port

@@ -19,11 +19,13 @@
         config = {
           allowUnfree = true;
         };
-        overlays = [(final: prev: {
-		djohnson-packages = import ./pkgs/packages.nix {
-		   pkgs = final;
-		   };
-	}) ];
+        overlays = [
+          (final: prev: {
+            djohnson-packages = import ./pkgs/packages.nix {
+              pkgs = final;
+            };
+          })
+        ];
       };
     in
     {
@@ -41,11 +43,12 @@
                 imports = [
                   (modulesPath + "/installer/cd-dvd/installation-cd-minimal.nix")
                 ];
-                environment.systemPackages = [ pkgs.neovim ];
+                environment.systemPackages = [
+                  pkgs.djohnson-packages.odroid-h4-plus-nas-installer
+                ];
               }
             )
             ./configurations/nas-nixos/configuration.nix
-
             ./configurations/nas-nixos/disko-config.nix
           ];
         };
