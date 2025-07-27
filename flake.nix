@@ -19,14 +19,15 @@
         config = {
           allowUnfree = true;
         };
-        overlays = [ ];
+        overlays = [(final: prev: {
+		djohnson-packages = import ./pkgs/packages.nix {
+		   pkgs = final;
+		   };
+	}) ];
       };
     in
     {
       formatter.${system} = pkgs.nixfmt-tree;
-      packages.${system} = {
-        odroid-h4-plus-nas-installer = import pkgs/odroid-h4-plus-nas-installer/package.nix;
-      };
       nixosConfigurations = {
         nas-nixos = nixpkgs.lib.nixosSystem {
           specialArgs = {
