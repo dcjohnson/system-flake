@@ -34,7 +34,9 @@
               }
             )
             ./configurations/nas-nixos/configuration.nix
-          ];
+	     ./configurations/nas-nixos/disko-config.nix {
+	      _module.args.disks = [ "/dev/nvme0n1" ];
+          }
         };
         djohnson-thinkpad-nixos = nixpkgs.lib.nixosSystem {
           specialArgs = {
