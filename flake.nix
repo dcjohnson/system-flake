@@ -24,6 +24,15 @@
             inherit pkgs system;
           };
           modules = [
+            (
+              { pkgs, modulesPath, ... }:
+              {
+                imports = [
+                  (modulesPath + "/installer/cd-dvd/installation-cd-minimal.nix")
+                ];
+                environment.systemPackages = [ pkgs.neovim ];
+              }
+            )
             ./configurations/nas-nixos/configuration.nix
           ];
         };
