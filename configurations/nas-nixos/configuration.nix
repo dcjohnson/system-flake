@@ -98,6 +98,7 @@
     neovim
     wget
     curl
+    djohnson-packages.odroid-h4-plus-nas-installer
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

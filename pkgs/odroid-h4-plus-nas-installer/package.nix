@@ -7,7 +7,7 @@ pkgs.stdenv.mkDerivation {
     "installPhase"
   ];
   installPhase = ''
-    mkdir -p $out
-    cp $src/install.sh $out
+    mkdir -p $out/bin
+    cp $src/install.sh $out/bin/install.sh
   '';
 }
