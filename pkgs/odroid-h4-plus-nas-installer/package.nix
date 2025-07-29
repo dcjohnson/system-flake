@@ -8,6 +8,6 @@ pkgs.stdenv.mkDerivation {
   ];
   installPhase = ''
     mkdir -p $out/bin
-    cp $src/install.sh $out/bin/install.sh
+    cp $src/install-odroid-os.sh $out/bin/.
   '';
 }
