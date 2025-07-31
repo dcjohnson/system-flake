@@ -23,7 +23,7 @@
               end = "100%";
               content = {
                 type = "filesystem";
-                format = "bcachefs";
+                format = "btrfs";
                 mountpoint = "/";
               };
             };

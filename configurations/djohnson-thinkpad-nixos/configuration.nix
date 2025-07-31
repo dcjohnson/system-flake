@@ -103,12 +103,14 @@
 
   environment.systemPackages = with pkgs; [
     neovim
+    gparted
     minicom
     kitty
     git
     openssl
     ntfs3g
     bftpd
+    parted
     file
     wget
     curl
