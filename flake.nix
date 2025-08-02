@@ -37,17 +37,23 @@
           nas-v1 = {
 
             main = nixpkgs.lib.nixosSystem {
-              pkgs = dpkgs;
+              specialArgs = {
+	      inherit disko;
+	      };
+	      pkgs = dpkgs;
               modules = [
-	        ./modules/odroid-h4/nas-nixos/toplevel.nix
+                ./modules/odroid-h4/nas-nixos/toplevel.nix
               ];
             };
 
             installer = nixpkgs.lib.nixosSystem {
+	      specialArgs = {
+	        inherit disko;
+	};
               pkgs = dpkgs;
               modules = [
                 ./modules/odroid-h4/nas-nixos/toplevel-installer.nix
-	      ];
+              ];
             };
           };
         };

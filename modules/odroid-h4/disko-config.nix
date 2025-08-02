@@ -1,9 +1,10 @@
-{ disko, ... }: 
+{ disko, ... }:
 {
   imports = [
+
     disko.nixosModules.disko
   ];
-
+  config = {
   disko.devices = {
     disk = {
       nvme0n1 = {
@@ -37,4 +38,5 @@
       };
     };
   };
+};
 }
