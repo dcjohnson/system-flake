@@ -1,4 +1,9 @@
-{ disko, config, pkgs, ... }:
+{
+  disko,
+  config,
+  pkgs,
+  ...
+}:
 {
   imports = [
     ../disko-config.nix

@@ -1,7 +1,12 @@
-{ config, pkgs, modulesPath, ... }:
+{
+  config,
+  pkgs,
+  modulesPath,
+  ...
+}:
 {
   imports = [
-  ./toplevel.nix
+    ./toplevel.nix
     (modulesPath + "/installer/cd-dvd/installation-cd-minimal.nix")
   ];
 
