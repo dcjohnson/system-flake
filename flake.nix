@@ -28,30 +28,55 @@
           })
         ];
       };
-
     in
     {
       formatter.${system} = dpkgs.nixfmt-tree;
       nixosConfigurations = {
-        nas-nixos = nixpkgs.lib.nixosSystem {
-          pkgs = dpkgs;
-          modules = [
-            # nixpkgs.nixosModules.readOnlyPkgs
-            disko.nixosModules.disko
-            (
-              { pkgs, modulesPath, ... }:
-              {
-                imports = [
-                  (modulesPath + "/installer/cd-dvd/installation-cd-minimal.nix")
-                ];
-                environment.systemPackages = [
-                  pkgs.djohnson-packages.odroid-h4-plus-nas-installer
-                ];
-              }
-            )
-            ./configurations/nas-nixos/configuration.nix
-            ./configurations/nas-nixos/disko-config.nix
-          ];
+        odroid-h4 = {
+          nas-v1 = {
+
+            main = nixpkgs.lib.nixosSystem {
+              pkgs = dpkgs;
+              modules = [
+                # nixpkgs.nixosModules.readOnlyPkgs
+                disko.nixosModules.disko
+                (
+                  { pkgs, modulesPath, ... }:
+                  {
+                    imports = [
+                      (modulesPath + "/installer/cd-dvd/installation-cd-minimal.nix")
+                    ];
+                    environment.systemPackages = [
+                      pkgs.djohnson-packages.odroid-h4-plus-nas-installer
+                    ];
+                  }
+                )
+                ./configurations/nas-nixos/configuration.nix
+                ./configurations/nas-nixos/disko-config.nix
+              ];
+            };
+
+            installer = nixpkgs.lib.nixosSystem {
+              pkgs = dpkgs;
+              modules = [
+                # nixpkgs.nixosModules.readOnlyPkgs
+                disko.nixosModules.disko
+                (
+                  { pkgs, modulesPath, ... }:
+                  {
+                    imports = [
+                      (modulesPath + "/installer/cd-dvd/installation-cd-minimal.nix")
+                    ];
+                    environment.systemPackages = [
+                      pkgs.djohnson-packages.odroid-h4-plus-nas-installer
+                    ];
+                  }
+                )
+                ./configurations/nas-nixos/configuration.nix
+                ./configurations/nas-nixos/disko-config.nix
+              ];
+            };
+          };
         };
         djohnson-thinkpad-nixos = nixpkgs.lib.nixosSystem {
           pkgs = dpkgs;
