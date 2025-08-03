@@ -56,8 +56,6 @@
           };
         };
 
-	workstations-lenovo-thinkpad-t470-default = workstations.lenovo-thinkpad-t470.default;
-
         workstations = {
           lenovo-thinkpad-t470 = {
             default = nixpkgs.lib.nixosSystem {
@@ -69,5 +67,5 @@
           };
         };
       };
-   }; 
+    };
 }
