@@ -56,16 +56,16 @@
           };
         };
 
-	workstations = {
-        lenovo-thinkpad-t470 = {
-	default = nixpkgs.lib.nixosSystem {
-          pkgs = dpkgs;
-          modules = [
-            ./modules/djohnson-thinkpad-nixos/default.nix
-          ];
+        workstations = {
+          lenovo-thinkpad-t470 = {
+            default = nixpkgs.lib.nixosSystem {
+              pkgs = dpkgs;
+              modules = [
+                ./modules/djohnson-thinkpad-nixos/default.nix
+              ];
+            };
+          };
         };
-      }; 
-      };
       };
     };
 }
