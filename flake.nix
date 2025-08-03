@@ -32,7 +32,7 @@
     in
     {
       formatter.${system} = dpkgs.nixfmt-tree;
-      nixosConfigurations = {
+      nixosConfigurations = rec {
         odroid-h4 = {
           nas-v1 = {
             default = nixpkgs.lib.nixosSystem {
@@ -56,6 +56,8 @@
           };
         };
 
+	workstations-lenovo-thinkpad-t470-default = workstations.lenovo-thinkpad-t470.default;
+
         workstations = {
           lenovo-thinkpad-t470 = {
             default = nixpkgs.lib.nixosSystem {
@@ -67,5 +69,5 @@
           };
         };
       };
-    };
+   }; 
 }
