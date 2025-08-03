@@ -35,7 +35,6 @@
       nixosConfigurations = {
         odroid-h4 = {
           nas-v1 = {
-
             default = nixpkgs.lib.nixosSystem {
               specialArgs = {
                 inherit disko;
@@ -45,7 +44,6 @@
                 ./modules/odroid-h4/nas-nixos/default.nix
               ];
             };
-
             default-installer = nixpkgs.lib.nixosSystem {
               specialArgs = {
                 inherit disko;
@@ -57,13 +55,17 @@
             };
           };
         };
-        djohnson-thinkpad-nixos = nixpkgs.lib.nixosSystem {
+
+	workstations = {
+        lenovo-thinkpad-t470 = {
+	default = nixpkgs.lib.nixosSystem {
           pkgs = dpkgs;
           modules = [
-            nixpkgs.nixosModules.readOnlyPkgs
             ./modules/djohnson-thinkpad-nixos/default.nix
           ];
         };
+      }; 
+      };
       };
     };
 }
