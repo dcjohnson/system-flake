@@ -36,23 +36,23 @@
         odroid-h4 = {
           nas-v1 = {
 
-            main = nixpkgs.lib.nixosSystem {
+            default = nixpkgs.lib.nixosSystem {
               specialArgs = {
                 inherit disko;
               };
               pkgs = dpkgs;
               modules = [
-                ./modules/odroid-h4/nas-nixos/toplevel.nix
+                ./modules/odroid-h4/nas-nixos/default.nix
               ];
             };
 
-            installer = nixpkgs.lib.nixosSystem {
+            default-installer = nixpkgs.lib.nixosSystem {
               specialArgs = {
                 inherit disko;
               };
               pkgs = dpkgs;
               modules = [
-                ./modules/odroid-h4/nas-nixos/toplevel-installer.nix
+                ./modules/odroid-h4/nas-nixos/default-installer.nix
               ];
             };
           };
@@ -61,7 +61,7 @@
           pkgs = dpkgs;
           modules = [
             nixpkgs.nixosModules.readOnlyPkgs
-            ./configurations/djohnson-thinkpad-nixos/configuration.nix
+            ./modules/djohnson-thinkpad-nixos/default.nix
           ];
         };
       };
