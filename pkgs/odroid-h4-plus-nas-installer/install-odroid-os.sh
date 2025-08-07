@@ -3,16 +3,19 @@
 parted /dev/nvme0n1 -- mklabel gpt
 parted /dev/nvme0n1 -- mkpart ESP fat32 1MB 512MB
 parted /dev/nvme0n1 -- mkpart root btrfs 512MB 100%
-parted /dev/nvme0n1 -- set 2 esp on
+parted /dev/nvme0n1 -- set 1 esp on
 
 
 
-mkfs.fat -F 32 -n boot /dev/nvme0n1p1        # (for UEFI systems only)
-mkfs.btrfs -L nixos /dev/nvme0n1p2
+mkfs.fat -F 32 -n boot /dev/nvme0n1p1       
+mkfs.btrfs -f -L nixos /dev/nvme0n1p2
 mount /dev/disk/by-label/nixos /mnt
-mkdir -p /mnt/boot                      # (for UEFI systems only)
-mount -o umask=077 /dev/disk/by-label/boot /mnt/boot # (for UEFI systems only)
-#nixos-generate-config --root /mnt --flake 
-#nano /mnt/etc/nixos/configuration.nix
-#nixos-install # will need the flake parameter --flake
+mkdir /boot                   
+mount -o umask=077 /dev/disk/by-label/boot /boot
+nixos-generate-config --root /mnt --flake 
+nixos-install --flake github:dcjohnson/system-flake#odroid-h4-nas-v1-default
+
+# possibly modify fstab as well after this. 
+echo "Should you modify the fstab?!"
+
 # reboot

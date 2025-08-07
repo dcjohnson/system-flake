@@ -33,6 +33,8 @@
     {
       formatter.${system} = dpkgs.nixfmt-tree;
       nixosConfigurations = rec {
+        odroid-h4-nas-v1-default = odroid-h4.nas-v1.default;
+
         odroid-h4 = {
           nas-v1 = {
             default = nixpkgs.lib.nixosSystem {
