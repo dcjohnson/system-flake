@@ -9,6 +9,7 @@ parted /dev/nvme0n1 -- set 1 esp on
 
 mkfs.fat -F 32 -n boot /dev/nvme0n1p1       
 mkfs.btrfs -f -L nixos /dev/nvme0n1p2
+sleep 5
 mount /dev/disk/by-label/nixos /mnt
 mkdir /boot                   
 mount -o umask=077 /dev/disk/by-label/boot /boot

@@ -6,7 +6,7 @@
 }:
 {
   imports = [
-    ./toplevel.nix
+    ./default.nix
     (modulesPath + "/installer/cd-dvd/installation-cd-minimal.nix")
   ];
 
