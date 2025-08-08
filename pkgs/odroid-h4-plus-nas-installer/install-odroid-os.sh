@@ -16,7 +16,9 @@ mount -o umask=077 /dev/disk/by-label/boot /boot
 nixos-generate-config --root /mnt --flake 
 nixos-install --flake github:dcjohnson/system-flake#odroid-h4-nas-v1-default
 
-# possibly modify fstab as well after this. 
-echo "Should you modify the fstab?!"
+# set the fstab
+cat << EOF > /etc/fstab
+/dev/disk/by-label/nixos / btrfs x-initrd.mount 0 1
+EOF
 
 # reboot
