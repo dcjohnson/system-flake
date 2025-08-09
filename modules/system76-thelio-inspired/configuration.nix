@@ -21,12 +21,12 @@
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-hardware = {
-graphics = {
-enable = true;
-enable32bit = true;
-};
-};
+  hardware = {
+    graphics = {
+      enable = true;
+      enable32bit = true;
+    };
+  };
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -105,55 +105,55 @@ enable32bit = true;
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-      neovim
-      gparted
-      minicom
-      kitty
-      git
-      openssl
-      ntfs3g
-      bftpd
-      parted
-      file
-      wget
-      curl
-      jetbrains-mono
-      alsa-utils
-      texliveFull
-      gnumake
-      radeontop
-      radeon-profile
+    neovim
+    gparted
+    minicom
+    kitty
+    git
+    openssl
+    ntfs3g
+    bftpd
+    parted
+    file
+    wget
+    curl
+    jetbrains-mono
+    alsa-utils
+    texliveFull
+    gnumake
+    radeontop
+    radeon-profile
   ];
 
-    environment.gnome.excludePackages = with pkgs; [
-      baobab # disk usage analyzer
-      cheese # photo booth
-      eog # image viewer
-      epiphany # web browser
-      gedit # text editor
-      simple-scan # document scanner
-      totem # video player
-      yelp # help viewer
-      evince # document viewer
-      file-roller # archive manager
-      geary # email client
-      seahorse # password manager
+  environment.gnome.excludePackages = with pkgs; [
+    baobab # disk usage analyzer
+    cheese # photo booth
+    eog # image viewer
+    epiphany # web browser
+    gedit # text editor
+    simple-scan # document scanner
+    totem # video player
+    yelp # help viewer
+    evince # document viewer
+    file-roller # archive manager
+    geary # email client
+    seahorse # password manager
 
-      # these should be self explanatory
-      gnome-calculator
-      gnome-calendar
-      gnome-characters
-      gnome-clocks
-      gnome-contacts
-      gnome-font-viewer
-      gnome-logs
-      gnome-maps
-      gnome-music
-      gnome-screenshot
-      gnome-system-monitor
-      gnome-weather
-      gnome-connections
-    ];
+    # these should be self explanatory
+    gnome-calculator
+    gnome-calendar
+    gnome-characters
+    gnome-clocks
+    gnome-contacts
+    gnome-font-viewer
+    gnome-logs
+    gnome-maps
+    gnome-music
+    gnome-screenshot
+    gnome-system-monitor
+    gnome-weather
+    gnome-connections
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
