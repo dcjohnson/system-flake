@@ -110,7 +110,6 @@
       file
       wget
       curl
-      plan9port
       jetbrains-mono
       alsa-utils
       texliveFull

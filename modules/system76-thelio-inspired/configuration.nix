@@ -21,6 +21,13 @@
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
+hardware = {
+graphics = {
+enable = true;
+enable32bit = true;
+};
+};
+
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -89,9 +96,7 @@
       "networkmanager"
       "wheel"
     ];
-    packages = with pkgs; [
-      #  thunderbird
-    ];
+    packages = with pkgs; [ ];
   };
 
   # Install firefox.
@@ -100,11 +105,55 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    curl
-    wget
-    git
+      neovim
+      gparted
+      minicom
+      kitty
+      git
+      openssl
+      ntfs3g
+      bftpd
+      parted
+      file
+      wget
+      curl
+      jetbrains-mono
+      alsa-utils
+      texliveFull
+      gnumake
+      radeontop
+      radeon-profile
   ];
+
+    environment.gnome.excludePackages = with pkgs; [
+      baobab # disk usage analyzer
+      cheese # photo booth
+      eog # image viewer
+      epiphany # web browser
+      gedit # text editor
+      simple-scan # document scanner
+      totem # video player
+      yelp # help viewer
+      evince # document viewer
+      file-roller # archive manager
+      geary # email client
+      seahorse # password manager
+
+      # these should be self explanatory
+      gnome-calculator
+      gnome-calendar
+      gnome-characters
+      gnome-clocks
+      gnome-contacts
+      gnome-font-viewer
+      gnome-logs
+      gnome-maps
+      gnome-music
+      gnome-screenshot
+      gnome-system-monitor
+      gnome-weather
+      gnome-connections
+    ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
