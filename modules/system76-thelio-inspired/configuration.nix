@@ -1,10 +1,15 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
+
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -80,9 +85,12 @@
   users.users.dcj = {
     isNormalUser = true;
     description = "Dylan Conrad Johnson";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     packages = with pkgs; [
-    #  thunderbird
+      #  thunderbird
     ];
   };
 
@@ -95,10 +103,10 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  curl
-wget
-git
+    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    curl
+    wget
+    git
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
