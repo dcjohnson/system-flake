@@ -24,7 +24,12 @@
   hardware = {
     graphics = {
       enable = true;
-      enable32bit = true;
+      enable32Bit = true;
+    };
+    amdgpu = {
+      opencl = {
+        enable = true;
+      };
     };
   };
 
@@ -101,6 +106,7 @@
 
   # Install firefox.
   programs.firefox.enable = true;
+  programs.steam.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -121,8 +127,8 @@
     alsa-utils
     texliveFull
     gnumake
-    radeontop
-    radeon-profile
+    darktable
+    tmux
   ];
 
   environment.gnome.excludePackages = with pkgs; [

@@ -4,7 +4,7 @@ My System Flake
 # Build iso 
 
 ```bash
-nix build .#nixosConfigurations.nas-nixos.config.system.build.isoImage
+nix build .#nixosConfigurations.odroid-h4.nas-v1.default-installer.config.system.build.isoImage
 ```
 
 # Build system config

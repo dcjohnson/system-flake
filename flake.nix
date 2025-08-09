@@ -56,6 +56,7 @@
           };
         };
 
+        system76-thelio-inspired = workstations.system76-thelio-inspired.default;
         workstations = {
           system76-thelio-inspired = {
             default = nixpkgs.lib.nixosSystem {

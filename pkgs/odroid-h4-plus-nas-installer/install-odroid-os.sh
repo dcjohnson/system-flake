@@ -10,18 +10,15 @@ mkfs.btrfs -f -L nixos /dev/nvme0n1p2
 
 sleep 5
 
+mkdir /mnt
 mount /dev/disk/by-label/nixos /mnt
-mkdir /boot                   
-mount -o umask=077 /dev/disk/by-label/boot /boot
+
+mkdir -p /mnt/boot                   
+mount -o umask=077 /dev/disk/by-label/boot /mnt/boot
+
 nixos-generate-config --root /mnt --flake 
-nix build github:dcjohnson/system-flake#odroid-h4.nas-v1.default
-nixos-installer --system ./result
+nix build github:dcjohnson/system-flake#nixosConfigurations.odroid-h4.nas-v1.default.config.system.build.toplevel
+nixos-installer --root /mnt --system ./result
 
-#nixos-install --flake github:dcjohnson/system-flake#odroid-h4-nas-v1-default
-
-# set the fstab
-cat << EOF > /etc/fstab
-/dev/disk/by-label/nixos / btrfs x-initrd.mount 0 1
-EOF
 
 # reboot
