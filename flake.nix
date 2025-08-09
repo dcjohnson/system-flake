@@ -59,11 +59,20 @@
         };
 
         workstations = {
+	  system76-thelio-inspired = {
+	    default = nixpkgs.lib.nixosSystem {
+	    pkgs = dpkgs;
+	    modules = [
+	    ./modules/system76-thelio-inspired/configuration.nix
+	    ];
+	    };
+	    };
+
           lenovo-thinkpad-t470 = {
             default = nixpkgs.lib.nixosSystem {
               pkgs = dpkgs;
               modules = [
-                ./modules/djohnson-thinkpad-nixos/default.nix
+                ./modules/lenovo-thinkpad-t470/default.nix
               ];
             };
           };
