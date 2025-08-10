@@ -32,6 +32,11 @@
     in
     {
       formatter.${system} = dpkgs.nixfmt-tree;
+
+      diskoConfigurations = {
+        nvme = import ./modules/odroid-h4/disko-config.nix;
+      };
+
       nixosConfigurations = rec {
         odroid-h4 = {
           nas-v1 = {
