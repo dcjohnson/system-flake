@@ -3,11 +3,13 @@
   lib,
   pkgs,
   modulesPath,
+  disko,
   ...
 }:
 
 {
   imports = [
+    disko.nixosModules.disko
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
