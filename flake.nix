@@ -38,6 +38,7 @@
       };
 
       nixosConfigurations = rec {
+        odroid-h4-nas = odroid-h4.nas-v1.default;
         odroid-h4 = {
           nas-v1 = {
             default = nixpkgs.lib.nixosSystem {
