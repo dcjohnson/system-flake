@@ -21,8 +21,7 @@
               };
               nvme0n1p2 = {
                 name = "root";
-                start = "500MiB";
-                end = "100%";
+                size = "100%";
                 content = {
                   type = "filesystem";
                   format = "btrfs";
