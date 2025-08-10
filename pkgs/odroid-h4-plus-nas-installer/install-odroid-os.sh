@@ -1,24 +1,12 @@
 #!/usr/bin/env bash 
 
-parted /dev/nvme0n1 -- mklabel gpt
-parted /dev/nvme0n1 -- mkpart ESP fat32 1MB 512MB
-parted /dev/nvme0n1 -- mkpart root btrfs 512MB 100%
-parted /dev/nvme0n1 -- set 1 esp on
+nix run 'github:nix-community/disko/latest#disko-install' -- --write-efi-boot-entries --flake 'github:dcjohnson/system-flake#odroid-h4-nas' disk nvme0n1 /dev/nvme0n1 
 
-mkfs.fat -F 32 -n boot /dev/nvme0n1p1       
-mkfs.btrfs -f -L nixos /dev/nvme0n1p2
+mount /dev/nvme0n1p2 /mnt
 
-sleep 5
+nixos-enter --root /mnt -c 'passwd root'
+nixos-enter --root /mnt -c 'passwd nas'
 
-mkdir /mnt
-mount /dev/disk/by-label/nixos /mnt
-
-mkdir -p /mnt/boot                   
-mount -o umask=077 /dev/disk/by-label/boot /mnt/boot
-
-nixos-generate-config --root /mnt --flake 
-nix build github:dcjohnson/system-flake#nixosConfigurations.odroid-h4.nas-v1.default.config.system.build.toplevel
-nixos-installer --root /mnt --system ./result
+umount /dev/nvme0n1p2
 
 
-# reboot
