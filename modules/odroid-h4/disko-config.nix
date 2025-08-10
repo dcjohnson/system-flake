@@ -10,6 +10,7 @@
             type = "gpt";
             partitions = {
               nvme0n1p1 = {
+                type = "EF00";
                 name = "ESP";
                 start = "1MiB";
                 end = "500MiB";
@@ -17,6 +18,9 @@
                   type = "filesystem";
                   format = "vfat";
                   mountpoint = "/boot";
+                  mountOptions = [
+                    "umask=0077"
+                  ];
                 };
               };
               nvme0n1p2 = {
