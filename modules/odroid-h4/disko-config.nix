@@ -2,7 +2,87 @@
 {
   config = {
     disko.devices = {
+      zpool = {
+        zroot = {
+          type = "zpool";
+          mode = "raidz2";
+          # Workaround: cannot import 'zroot': I/O error in disko tests
+          options.cachefile = "none";
+          rootFsOptions = {
+            compression = "zstd";
+            "com.sun:auto-snapsot" = "true";
+          };
+          mountpoint = "/share/nas";
+          postCreateHook = "zfs list -t snapshot -H -o name | grep -E '^zroot@blank$' || zfs snapshot zroot@blank";
+        };
+      };
+
       disk = {
+        zfsDisk1 = {
+          type = "disk";
+          device = "/dev/sda";
+          content = {
+            type = "gpt";
+            partitions = {
+              zfs = {
+                size = "100%";
+                content = {
+                  type = "zfs";
+                  pool = "zrool";
+                };
+              };
+            };
+          };
+        };
+        zfsDisk2 = {
+          type = "disk";
+          device = "/dev/sdb";
+          content = {
+            type = "gpt";
+            partitions = {
+              zfs = {
+                size = "100%";
+                content = {
+                  type = "zfs";
+                  pool = "zrool";
+                };
+              };
+            };
+          };
+        };
+        zfsDisk3 = {
+          type = "disk";
+          device = "/dev/sdc";
+          content = {
+            type = "gpt";
+            partitions = {
+              zfs = {
+                size = "100%";
+                content = {
+                  type = "zfs";
+                  pool = "zrool";
+                };
+              };
+            };
+          };
+        };
+        zfsDisk4 = {
+          type = "disk";
+          device = "/dev/sdd";
+          content = {
+            type = "gpt";
+            partitions = {
+              zfs = {
+                size = "100%";
+                content = {
+                  type = "zfs";
+                  pool = "zrool";
+                };
+              };
+            };
+          };
+        };
+
         nvme0n1 = {
           device = "/dev/nvme0n1";
           type = "disk";

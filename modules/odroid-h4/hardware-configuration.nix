@@ -26,13 +26,20 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
-  # (the default) this is the recommended approach. When using systemd-networkd it's
-  # still possible to use this option, but it's recommended to use it in conjunction
-  # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
-  networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp1s0.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp2s0.useDHCP = lib.mkDefault true;
+  # Enable networking
+  networking = {
+    # interfaces.enp1s0.useDHCP = lib.mkDefault true;
+    # interfaces.enp2s0.useDHCP = lib.mkDefault true;
 
+    # Configure network proxy if necessary
+    # proxy.default = "http://user:password@proxy:port/";
+    # proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+
+    useDHCP = lib.mkDefault true;
+    networkmanager.enable = true;
+    hostId = "1ca2fdc1";
+    hostName = "nas1"; # Define your hostname.
+    wireless.enable = false; # Enables wireless support via wpa_supplicant.
+  };
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
