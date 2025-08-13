@@ -19,4 +19,6 @@ nix build .#nixosConfigurations.nas-nixos.config.system.build.toplevel
 nix build .#nixosConfigurations.workstations.lenovo-thinkpad-t470.default.config.system.build.toplevel
 sudo ./result/bin/switch-to-configuration boot
 ```
+# ZFS
 
+https://nixos.wiki/wiki/ZFS

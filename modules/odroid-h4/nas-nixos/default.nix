@@ -98,6 +98,7 @@
       neovim
       wget
       curl
+      zfs
     ];
 
     # Some programs need SUID wrappers, can be configured further or are
