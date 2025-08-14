@@ -13,7 +13,7 @@
             "com.sun:auto-snapsot" = "true";
           };
           mountpoint = "/share/nas";
-          postCreateHook = "zfs list -t snapshot -H -o name | grep -E '^zroot@blank$' || zfs snapshot zroot@blank";
+          #postCreateHook = "zfs list -t snapshot -H -o name | grep -E '^zroot@blank$' || zfs snapshot zroot@blank";
         };
       };
 
