@@ -25,7 +25,10 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
-
+  boot.zfs = {
+    enabled = true;
+    extraPools = [ "zroot" ];
+  };
   # Enable networking
   networking = {
     # interfaces.enp1s0.useDHCP = lib.mkDefault true;
