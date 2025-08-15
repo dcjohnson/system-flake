@@ -28,7 +28,7 @@
                 size = "100%";
                 content = {
                   type = "zfs";
-                  pool = "zrool";
+                  pool = "zroot";
                 };
               };
             };
@@ -44,7 +44,7 @@
                 size = "100%";
                 content = {
                   type = "zfs";
-                  pool = "zrool";
+                  pool = "zroot";
                 };
               };
             };
@@ -60,7 +60,7 @@
                 size = "100%";
                 content = {
                   type = "zfs";
-                  pool = "zrool";
+                  pool = "zroot";
                 };
               };
             };
@@ -76,7 +76,7 @@
                 size = "100%";
                 content = {
                   type = "zfs";
-                  pool = "zrool";
+                  pool = "zroot";
                 };
               };
             };
