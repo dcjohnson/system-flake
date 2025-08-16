@@ -26,7 +26,7 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
   boot.zfs = {
-    devNodes = "/dev/disk/by-uuid";
+    # devNodes = "/dev/disk/by-uuid";
   };
   # Enable networking
   networking = {
