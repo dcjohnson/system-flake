@@ -4,7 +4,9 @@ nix run 'github:nix-community/disko/latest#disko-install' -- --write-efi-boot-en
 
 mount /dev/nvme0n1p2 /mnt
 
+echo 'Set root password'
 nixos-enter --root /mnt -c 'passwd root'
+echo 'Set nas password'
 nixos-enter --root /mnt -c 'passwd nas'
 
 umount /dev/nvme0n1p2
