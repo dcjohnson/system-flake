@@ -26,7 +26,6 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
   boot.zfs = {
-    enabled = true;
     extraPools = [ "zroot" ];
   };
   # Enable networking
