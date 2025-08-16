@@ -12,7 +12,6 @@
     disko.nixosModules.disko
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
-
   boot.initrd.availableKernelModules = [
     "xhci_pci"
     "ahci"
@@ -25,9 +24,16 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
-  boot.zfs = {
-    # devNodes = "/dev/disk/by-uuid";
-  };
+ 
+
+ #boot.supportedFilesystems = [ "zfs" ];
+
+   # boot.zfs = {
+   #   forceImportRoot = true;
+   #   forceImportAll = true;
+   #   devNodes = "/dev/disk/by-id";
+   #   extraPools = [ "zroot" ];
+   # };
   # Enable networking
   networking = {
     # interfaces.enp1s0.useDHCP = lib.mkDefault true;

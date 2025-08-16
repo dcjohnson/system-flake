@@ -13,8 +13,8 @@
             compression = "zstd";
             "com.sun:auto-snapshot" = "false";
             canmount = "on";
-          };
-          mountpoint = "/mnt/zfs";
+          mountpoint = "mnt/zfs";
+	  };
           #postCreateHook = "zfs list -t snapshot -H -o name | grep -E '^zroot@blank$' || zfs snapshot zroot@blank";
 
           datasets = {
