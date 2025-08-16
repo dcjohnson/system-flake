@@ -11,4 +11,6 @@ nixos-enter --root /mnt -c 'passwd nas'
 
 umount /dev/nvme0n1p2
 
+zpool export zroot
+
 
