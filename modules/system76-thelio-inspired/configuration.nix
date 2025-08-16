@@ -25,6 +25,41 @@
     graphics = {
       enable = true;
       enable32Bit = true;
+
+      extraPackages = with pkgs; [
+        # Add ROCm compute libraries for DaVinci Resolve
+        rocmPackages.clr.icd
+
+        # Mesa demos for testing OpenGL
+        mesa-demos
+
+        # Complete GStreamer codec suite (matching Bazzite/Universal Blue)
+        gst_all_1.gstreamer
+        gst_all_1.gst-plugins-base
+        gst_all_1.gst-plugins-good
+        gst_all_1.gst-plugins-bad
+        gst_all_1.gst-plugins-ugly
+        gst_all_1.gst-libav # FFmpeg integration for GStreamer
+        gst_all_1.gst-vaapi # VA-API hardware acceleration
+
+        # Additional multimedia libraries
+        ffmpeg-full # Complete FFmpeg with all codecs
+        libva # Video Acceleration API
+        libva-utils # VA-API utilities (vainfo, etc.)
+        vaapiVdpau # VAAPI driver that uses VDPAU
+        libvdpau-va-gl # VDPAU driver that uses VA-GL
+      ];
+
+      extraPackages32 = with pkgs.pkgsi686Linux; [
+        gst_all_1.gstreamer
+        gst_all_1.gst-plugins-base
+        gst_all_1.gst-plugins-good
+        gst_all_1.gst-plugins-bad
+        gst_all_1.gst-plugins-ugly
+        gst_all_1.gst-libav
+        libva
+        # Note: Mesa drivers included automatically
+      ];
     };
     amdgpu = {
       opencl = {
@@ -70,6 +105,8 @@
     layout = "us";
     variant = "";
   };
+
+  services.hardware.openrgb.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -129,6 +166,12 @@
     gnumake
     darktable
     tmux
+    # gaming stuff
+    gamescope # Valve's micro-compositor for gaming
+    mangohud # Performance overlay
+    goverlay # GUI for MangoHud configuration
+    lutris # Another game launcher
+    input-remapper # Universal input device remapping
   ];
 
   environment.gnome.excludePackages = with pkgs; [
