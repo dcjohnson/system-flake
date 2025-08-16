@@ -12,6 +12,7 @@
           rootFsOptions = {
             compression = "zstd";
             "com.sun:auto-snapshot" = "false";
+            canmount = "on";
           };
           mountpoint = "/mnt/zfs";
           #postCreateHook = "zfs list -t snapshot -H -o name | grep -E '^zroot@blank$' || zfs snapshot zroot@blank";
@@ -19,13 +20,19 @@
           datasets = {
             zfs_git = {
               type = "zfs_fs";
-              mountpoint = "/git";
-              options."com.sun:auto-snapshot" = "false";
+              options = {
+                canmount = "on";
+                mountpoint = "/mnt/git";
+                "com.sun:auto-snapshot" = "false";
+              };
             };
             zfs_nas = {
               type = "zfs_fs";
-              mountpoint = "/nas";
-              options."com.sun:auto-snapshot" = "false";
+              options = {
+                mountpoint = "/mnt/nas";
+                canmount = "on";
+                "com.sun:auto-snapshot" = "false";
+              };
             };
           };
         };
