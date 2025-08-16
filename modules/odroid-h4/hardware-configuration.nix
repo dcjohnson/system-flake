@@ -26,14 +26,14 @@
   boot.extraModulePackages = [ ];
  
 
- #boot.supportedFilesystems = [ "zfs" ];
+ boot.supportedFilesystems = [ "zfs" ];
 
-   # boot.zfs = {
-   #   forceImportRoot = true;
-   #   forceImportAll = true;
-   #   devNodes = "/dev/disk/by-id";
-   #   extraPools = [ "zroot" ];
-   # };
+    boot.zfs = {
+      forceImportRoot = true;
+      forceImportAll = true;
+      devNodes = "/dev/disk/by-id";
+      extraPools = [ "zroot" ];
+    };
   # Enable networking
   networking = {
     # interfaces.enp1s0.useDHCP = lib.mkDefault true;
