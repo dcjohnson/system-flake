@@ -41,7 +41,7 @@
     # Configure network proxy if necessary
     # proxy.default = "http://user:password@proxy:port/";
     # proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
+    firewall.allowedTCPPorts = [ 2049 ];
     useDHCP = lib.mkDefault true;
     networkmanager.enable = true;
     hostId = "1ca2fdc1";
