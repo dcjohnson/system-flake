@@ -37,6 +37,11 @@
     ];
   };
 
+  fileSystems."/mnt/nas" = {
+    device = "192.168.88.228:/mnt/nas/dcjohnson";
+    fsType = "nfs";
+  };
+
   swapDevices = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

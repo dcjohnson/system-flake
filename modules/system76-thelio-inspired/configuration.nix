@@ -112,7 +112,19 @@
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
+  security = {
+    wrappers = {
+      "mount.nfs" = {
+        setuid = true;
+        owner = "root";
+        group = "root";
+        source = "${pkgs.nfs-utils}/bin/mount.nfs";
+      };
+    };
+    rtkit = {
+      enable = true;
+    };
+  };
   services.pipewire = {
     enable = true;
     alsa.enable = true;
