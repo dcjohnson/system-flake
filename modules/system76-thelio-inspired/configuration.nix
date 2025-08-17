@@ -95,7 +95,6 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
@@ -172,6 +171,7 @@
     goverlay # GUI for MangoHud configuration
     lutris # Another game launcher
     input-remapper # Universal input device remapping
+    nfs-utils
   ];
 
   environment.gnome.excludePackages = with pkgs; [
