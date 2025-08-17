@@ -42,6 +42,12 @@
       LC_TIME = "en_US.UTF-8";
     };
 
+    services.nfs = {
+      server = {
+        enable = true;
+      };
+    };
+
     # Enable the X11 windowing system.
     services.xserver.enable = false;
 
