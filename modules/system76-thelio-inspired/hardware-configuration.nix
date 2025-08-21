@@ -38,7 +38,7 @@
   };
 
   fileSystems."/mnt/nas" = {
-    device = "192.168.88.228:/mnt/nas/dcjohnson";
+    device = "192.168.88.228:/mnt/nas";
     fsType = "nfs";
   };
 
