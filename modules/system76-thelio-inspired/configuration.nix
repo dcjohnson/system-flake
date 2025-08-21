@@ -170,6 +170,7 @@
     parted
     file
     wget
+    wireguard-tools
     curl
     jetbrains-mono
     alsa-utils

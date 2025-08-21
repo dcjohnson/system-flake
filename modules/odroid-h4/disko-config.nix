@@ -11,7 +11,7 @@
 
           rootFsOptions = {
             compression = "zstd";
-            "com.sun:auto-snapshot" = "false";
+            "com.sun:auto-snapshot" = "true";
             canmount = "on";
             mountpoint = "/mnt/zfs";
           };
@@ -23,7 +23,7 @@
               options = {
                 canmount = "on";
                 mountpoint = "/mnt/git";
-                "com.sun:auto-snapshot" = "false";
+                "com.sun:auto-snapshot" = "true";
               };
             };
             zfs_nas = {
@@ -31,7 +31,7 @@
               options = {
                 mountpoint = "/mnt/nas";
                 canmount = "on";
-                "com.sun:auto-snapshot" = "false";
+                "com.sun:auto-snapshot" = "true";
               };
             };
           };

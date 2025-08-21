@@ -47,6 +47,11 @@
       };
     };
 
+    services.zfs = {
+      autoScrub.enable = true;
+      autoSnapshot.enable = true;
+    };
+
     # Enable the X11 windowing system.
     services.xserver.enable = false;
 
