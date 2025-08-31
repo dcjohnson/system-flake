@@ -178,6 +178,9 @@
     gnumake
     darktable
     tmux
+    zip
+    unzip
+    exiftool
     # gaming stuff
     gamescope # Valve's micro-compositor for gaming
     mangohud # Performance overlay
