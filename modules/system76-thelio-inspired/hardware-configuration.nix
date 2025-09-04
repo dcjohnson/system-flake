@@ -38,7 +38,7 @@
   };
 
   fileSystems."/mnt/nas" = {
-    device = "192.168.88.228:/mnt/nas";
+    device = "nas.homenet:/mnt/nas";
     fsType = "nfs";
   };
 
