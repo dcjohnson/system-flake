@@ -62,25 +62,18 @@
           };
         };
 
-        system76-thelio-inspired = workstations.system76-thelio-inspired.default;
-        workstations = {
-          system76-thelio-inspired = {
-            default = nixpkgs.lib.nixosSystem {
-              pkgs = dpkgs;
-              modules = [
-                ./modules/system76-thelio-inspired/configuration.nix
-              ];
-            };
-          };
+        system76-thelio-inspired = nixpkgs.lib.nixosSystem {
+          pkgs = dpkgs;
+          modules = [
+            ./modules/system76-thelio-inspired/configuration.nix
+          ];
+        };
 
-          lenovo-thinkpad-t470 = {
-            default = nixpkgs.lib.nixosSystem {
-              pkgs = dpkgs;
-              modules = [
-                ./modules/lenovo-thinkpad-t470/default.nix
-              ];
-            };
-          };
+        lenovo-thinkpad-t470 = nixpkgs.lib.nixosSystem {
+          pkgs = dpkgs;
+          modules = [
+            ./modules/lenovo-thinkpad-t470/default.nix
+          ];
         };
       };
     };
