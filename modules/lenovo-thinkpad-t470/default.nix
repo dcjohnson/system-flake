@@ -93,6 +93,7 @@
 
     # Install firefox.
     programs = {
+      chromium.enable = true;
       firefox.enable = true;
       tmux.enable = true;
     };
@@ -103,6 +104,7 @@
       minicom
       kitty
       git
+      chromium
       openssl
       ntfs3g
       bftpd
