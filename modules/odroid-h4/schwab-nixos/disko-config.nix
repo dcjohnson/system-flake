@@ -38,11 +38,10 @@
           options.cachefile = "none";
           rootFsOptions = {
             compression = "zstd";
-            "com.sun:auto-snapshot" = "false";
+            "com.sun:auto-snapshot" = "true";
+            canmount = "on";
+            mountpoint = "/";
           };
-          mountpoint = "/";
-
-          datasets = { };
         };
       };
     };
