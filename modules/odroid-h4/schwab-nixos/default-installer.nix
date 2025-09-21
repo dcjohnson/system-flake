@@ -75,7 +75,7 @@
     # $ nix search wget
     environment.systemPackages = with pkgs; [
       neovim
-      djohnson-packages.installers.odroid-h4-plus-nas-installer
+      djohnson-packages.installers.odroid-h4-ultra-schwab-installer
     ];
 
     # Some programs need SUID wrappers, can be configured further or are

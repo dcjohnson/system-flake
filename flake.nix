@@ -34,11 +34,11 @@
               installers = import ./pkgs/packages.nix {
                 pkgs = final;
               };
-              schwab-auto-trader = final.callPackage "${inputs.schwab-auto-trader}/package.nix" { 
-		pkgs = final;
-		inherit naersk;
-		src = inputs.schwab-auto-trader;
-	      };
+              schwab-auto-trader = final.callPackage "${inputs.schwab-auto-trader}/package.nix" {
+                pkgs = final;
+                inherit naersk;
+                src = inputs.schwab-auto-trader;
+              };
             };
           })
         ];
@@ -54,7 +54,30 @@
 
       nixosConfigurations = rec {
         odroid-h4-nas = odroid-h4.nas-v1.default;
+        odroid-h4-schwab = odroid-h4.schwab-v1.default;
         odroid-h4 = {
+          schwab-v1 = {
+            default = nixpkgs.lib.nixosSystem {
+              specialArgs = {
+                inherit disko;
+              };
+              pkgs = dpkgs;
+              modules = [
+                ./modules/odroid-h4/schwab-nixos/default.nix
+              ];
+            };
+
+            default-installer = nixpkgs.lib.nixosSystem {
+              specialArgs = {
+                inherit disko;
+              };
+              pkgs = dpkgs;
+              modules = [
+                ./modules/odroid-h4/schwab-nixos/default-installer.nix
+              ];
+            };
+
+          };
           nas-v1 = {
             default = nixpkgs.lib.nixosSystem {
               specialArgs = {
