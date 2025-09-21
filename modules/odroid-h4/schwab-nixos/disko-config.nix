@@ -33,7 +33,7 @@
       zpool = {
         zroot = {
           type = "zpool";
-          mode = "single";
+          mode = "";
           # Workaround: cannot import 'zroot': I/O error in disko tests
           options.cachefile = "none";
           rootFsOptions = {
