@@ -153,8 +153,11 @@
   };
 
   # Install firefox.
-  programs.firefox.enable = true;
-  programs.steam.enable = true;
+  programs = {
+    firefox.enable = true;
+    chromium.enable = true;
+    steam.enable = true;
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -168,6 +171,7 @@
     ntfs3g
     bftpd
     parted
+    vlc
     file
     wget
     wireguard-tools
@@ -177,7 +181,9 @@
     texliveFull
     gnumake
     darktable
+    chromium
     tmux
+    jq
     zip
     unzip
     exiftool
