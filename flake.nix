@@ -1,6 +1,12 @@
 {
   description = "My system flake";
   inputs = {
+    schwab-auto-trader.url = "github:dcjohnson/schwab-auto-trader";
+    schwab-auto-trader.flake = false;
+
+    naersk.url = "github:nix-community/naersk/master";
+    naersk.flake = false;
+
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
@@ -9,8 +15,10 @@
   outputs =
     {
       self,
+      schwab-auto-trader,
       nixpkgs,
       disko,
+      naersk,
     }@inputs:
     let
       system = "x86_64-linux";
@@ -22,8 +30,15 @@
         hostPlatform = system;
         overlays = [
           (final: prev: {
-            djohnson-packages = import ./pkgs/packages.nix {
-              pkgs = final;
+            djohnson-packages = {
+              installers = import ./pkgs/packages.nix {
+                pkgs = final;
+              };
+              schwab-auto-trader = final.callPackage "${inputs.schwab-auto-trader}/package.nix" { 
+		pkgs = final;
+		inherit naersk;
+		src = inputs.schwab-auto-trader;
+	      };
             };
           })
         ];
