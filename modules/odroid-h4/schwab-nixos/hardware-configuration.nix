@@ -27,6 +27,11 @@
 
   boot.supportedFilesystems = [ "zfs" ];
 
+  fileSystems."/mnt/nas" = {
+    device = "nas.homenet:/mnt/nas";
+    fsType = "nfs";
+  };
+
   boot.zfs = {
     forceImportRoot = true;
     forceImportAll = true;
@@ -35,17 +40,10 @@
   };
   # Enable networking
   networking = {
-    # interfaces.enp1s0.useDHCP = lib.mkDefault true;
-    # interfaces.enp2s0.useDHCP = lib.mkDefault true;
-
-    # Configure network proxy if necessary
-    # proxy.default = "http://user:password@proxy:port/";
-    # proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-    firewall.allowedTCPPorts = [ 2049 ];
     useDHCP = lib.mkDefault true;
     networkmanager.enable = true;
-    hostId = "1ca2fdc1";
-    hostName = "nas1"; # Define your hostname.
+    hostId = "1ca2fdc2";
+    hostName = "schwab1"; # Define your hostname.
     wireless.enable = false; # Enables wireless support via wpa_supplicant.
   };
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
