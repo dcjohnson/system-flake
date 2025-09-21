@@ -10,5 +10,3 @@ echo 'Set trader password'
 nixos-enter --root /mnt -c 'passwd trader'
 
 umount /dev/nvme0n1p2
-
-export zpool zroot

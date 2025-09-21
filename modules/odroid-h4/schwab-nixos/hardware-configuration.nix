@@ -25,19 +25,13 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  boot.supportedFilesystems = [ "zfs" ];
+  boot.supportedFilesystems = [ ];
 
   fileSystems."/mnt/nas" = {
     device = "nas.homenet:/mnt/nas";
     fsType = "nfs";
   };
 
-  boot.zfs = {
-    forceImportRoot = true;
-    forceImportAll = true;
-    devNodes = "/dev/disk/by-id";
-    extraPools = [ "zroot" ];
-  };
   # Enable networking
   networking = {
     useDHCP = lib.mkDefault true;

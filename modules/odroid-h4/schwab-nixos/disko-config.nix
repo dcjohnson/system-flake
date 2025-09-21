@@ -9,38 +9,30 @@
           content = {
             type = "gpt";
             partitions = {
-              ESP = {
-                size = "64M";
+              nvme0n1p1 = {
                 type = "EF00";
+                name = "ESP";
+                start = "1MiB";
+                end = "500MiB";
                 content = {
                   type = "filesystem";
                   format = "vfat";
                   mountpoint = "/boot";
-                  mountOptions = [ "umask=0077" ];
+                  mountOptions = [
+                    "umask=0077"
+                  ];
                 };
               };
-              zfs = {
+              nvme0n1p2 = {
+                name = "root";
                 size = "100%";
                 content = {
-                  type = "zfs";
-                  pool = "zroot";
+                  type = "filesystem";
+                  format = "btrfs";
+                  mountpoint = "/";
                 };
               };
             };
-          };
-        };
-      };
-      zpool = {
-        zroot = {
-          type = "zpool";
-          mode = "";
-          # Workaround: cannot import 'zroot': I/O error in disko tests
-          options.cachefile = "none";
-          rootFsOptions = {
-            compression = "zstd";
-            "com.sun:auto-snapshot" = "true";
-            canmount = "on";
-            mountpoint = "/";
           };
         };
       };
