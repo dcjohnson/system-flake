@@ -4,7 +4,7 @@
     inherit pkgs;
   };
 
-  odroid-h4-plus-schwab-installer = import ./odroid-h4-ultra-schwab-installer/package.nix {
+  odroid-h4-ultra-schwab-installer = import ./odroid-h4-ultra-schwab-installer/package.nix {
     inherit pkgs;
   };
 }
