@@ -64,11 +64,11 @@
     "schwab-auto-trader": {
       "flake": false,
       "locked": {
-        "lastModified": 1758479195,
-        "narHash": "sha256-wpx338vVYpVwa2ai7yr/8wMVyLJjCPWgEH0EAxfARHU=",
+        "lastModified": 1758553478,
+        "narHash": "sha256-r14zh1oZXopIbF8fGCuShAClcbs75KMVLOyA3s8jLkI=",
         "owner": "dcjohnson",
         "repo": "schwab-auto-trader",
-        "rev": "4033e7e85b9cf1ce9dcc52f95687ce4def4bbe28",
+        "rev": "c5eb53bb0a08c48016ded3c713e06bf59b9a20d1",
         "type": "github"
       },
       "original": {
