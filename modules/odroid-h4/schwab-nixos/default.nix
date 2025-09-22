@@ -60,15 +60,14 @@
     };
 
     # Define a user account. Don't forget to set a password with ‘passwd’.
-    users.users.nas = {
+    users.users.schwab = {
       isNormalUser = true;
-      description = "nas";
+      description = "schwab";
       extraGroups = [
         "networkmanager"
         "wheel"
       ];
-      packages = with pkgs; [
-      ];
+      packages = with pkgs; [ ];
     };
 
     # Install firefox.
