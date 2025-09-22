@@ -34,6 +34,11 @@
 
   # Enable networking
   networking = {
+    firewall.allowedTCPPorts = [
+      8182
+      22
+    ];
+
     useDHCP = lib.mkDefault true;
     networkmanager.enable = true;
     hostId = "1ca2fdc2";

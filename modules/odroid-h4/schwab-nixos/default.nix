@@ -41,11 +41,6 @@
       LC_TIME = "en_US.UTF-8";
     };
 
-    services.zfs = {
-      autoScrub.enable = true;
-      autoSnapshot.enable = true;
-    };
-
     # Enable the X11 windowing system.
     services.xserver.enable = false;
 
