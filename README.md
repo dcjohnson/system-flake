@@ -7,6 +7,13 @@ My System Flake
 nix build .#nixosConfigurations.odroid-h4.nas-v1.default-installer.config.system.build.isoImage
 ```
 
+# build and activate new system config 
+```bash 
+sudo nixos-rebuild switch --flake github:dcjohnson/system-flake#odroid-h4-schwab --refresh
+```
+The `--refresh` flag will fetch the latest flake
+
+
 # Build system config
 
 ```
