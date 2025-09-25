@@ -64,15 +64,16 @@
     "schwab-auto-trader": {
       "flake": false,
       "locked": {
-        "lastModified": 1758726791,
-        "narHash": "sha256-8WERuXnuDWTApC2JMDHSMJoy2xwMsf/RLZeN/alLmTE=",
+        "lastModified": 1758729946,
+        "narHash": "sha256-Gj8FI7yjPSNyaIK9X/YHbN198mQiMxY803/9Wb3kEGM=",
         "owner": "dcjohnson",
         "repo": "schwab-auto-trader",
-        "rev": "ca27686f24e6f942b81d367b7c3dcbe7712884e3",
+        "rev": "6bc2bcb1a992d6bc0de3016eb8b1f35b20b61fe9",
         "type": "github"
       },
       "original": {
         "owner": "dcjohnson",
+        "ref": "feature/no-locks-in-oauthmanager",
         "repo": "schwab-auto-trader",
         "type": "github"
       }
