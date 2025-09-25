@@ -73,7 +73,7 @@
       },
       "original": {
         "owner": "dcjohnson",
-        "ref": "feature/no-locks-in-oauthmanager",
+        "ref": "main",
         "repo": "schwab-auto-trader",
         "type": "github"
       }
