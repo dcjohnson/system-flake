@@ -1,7 +1,7 @@
 {
   description = "My system flake";
   inputs = {
-    schwab-auto-trader.url = "github:dcjohnson/schwab-auto-trader?ref=main";
+    schwab-auto-trader.url = "github:dcjohnson/schwab-auto-trader?ref=feature/ui";
     schwab-auto-trader.flake = false;
 
     naersk.url = "github:nix-community/naersk/master";
