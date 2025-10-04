@@ -39,11 +39,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1758791193,
-        "narHash": "sha256-F8WmEwFoHsnix7rt290R0rFXNJiMbClMZyIC/e+HYf0=",
+        "lastModified": 1759439645,
+        "narHash": "sha256-oiAyQaRilPk525Z5aTtTNWNzSrcdJ7IXM0/PL3CGlbI=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "25e53aa156d47bad5082ff7618f5feb1f5e02d01",
+        "rev": "879bd460b3d3e8571354ce172128fbcbac1ed633",
         "type": "github"
       },
       "original": {
@@ -64,16 +64,16 @@
     "schwab-auto-trader": {
       "flake": false,
       "locked": {
-        "lastModified": 1759077939,
-        "narHash": "sha256-tkzO1/ewaB5EXpezMvkXCXjDZSz0zeV2hoL1QZ0wBZY=",
+        "lastModified": 1759157218,
+        "narHash": "sha256-1nWQllwuSdbZPmPC/aJnHca0zFvkmoEudwlWht1PzKI=",
         "owner": "dcjohnson",
         "repo": "schwab-auto-trader",
-        "rev": "ecff87988605ad221fa801eef4d51fd591c58b15",
+        "rev": "e4d00c8c3c7a824cff6ac9fae8c17df0ad4c43d8",
         "type": "github"
       },
       "original": {
         "owner": "dcjohnson",
-        "ref": "feature/ui",
+        "ref": "main",
         "repo": "schwab-auto-trader",
         "type": "github"
       }
