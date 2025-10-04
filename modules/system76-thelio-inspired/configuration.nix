@@ -157,6 +157,8 @@
     firefox.enable = true;
     chromium.enable = true;
     steam.enable = true;
+    _1password.enable = true;
+    _1password-gui.enable = true;
   };
 
   # List packages installed in system profile. To search, run:
