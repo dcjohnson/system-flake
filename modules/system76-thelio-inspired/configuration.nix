@@ -152,13 +152,21 @@
     packages = with pkgs; [ ];
   };
 
-  # Install firefox.
   programs = {
-    firefox.enable = true;
+    firefox.enable = false;
     chromium.enable = true;
     steam.enable = true;
     _1password.enable = true;
     _1password-gui.enable = true;
+
+    # Some programs need SUID wrappers, can be configured further or are
+    # started in user sessions.
+    mtr.enable = true;
+    gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
+    };
+
   };
 
   # List packages installed in system profile. To search, run:
@@ -189,6 +197,7 @@
     zip
     unzip
     exiftool
+
     # gaming stuff
     gamescope # Valve's micro-compositor for gaming
     mangohud # Performance overlay
@@ -199,15 +208,12 @@
   ];
 
   environment.gnome.excludePackages = with pkgs; [
-    baobab # disk usage analyzer
     cheese # photo booth
-    eog # image viewer
     epiphany # web browser
     gedit # text editor
     simple-scan # document scanner
     totem # video player
     yelp # help viewer
-    evince # document viewer
     file-roller # archive manager
     geary # email client
     seahorse # password manager
@@ -228,16 +234,7 @@
     gnome-connections
   ];
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
   # List services that you want to enable:
-
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
