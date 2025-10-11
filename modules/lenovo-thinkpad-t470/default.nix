@@ -114,6 +114,7 @@
       curl
       jetbrains-mono
       alsa-utils
+      sl
       texliveFull
       gnumake
     ];
