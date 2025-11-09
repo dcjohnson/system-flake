@@ -94,8 +94,10 @@
     # Install firefox.
     programs = {
       chromium.enable = true;
-      firefox.enable = true;
+      firefox.enable = false;
       tmux.enable = true;
+      _1password.enable = true;
+      _1password-gui.enable = true;
     };
 
     environment.systemPackages = with pkgs; [

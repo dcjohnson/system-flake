@@ -26,6 +26,7 @@
         inherit system;
         config = {
           allowUnfree = true;
+          permittedInsecurePackages = [ "mbedtls-2.28.10" ];
         };
         hostPlatform = system;
         overlays = [
