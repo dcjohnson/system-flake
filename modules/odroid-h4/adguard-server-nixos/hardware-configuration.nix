@@ -30,6 +30,7 @@
   # Enable networking
   networking = {
     firewall.allowedTCPPorts = [
+      3000
       22
     ];
 

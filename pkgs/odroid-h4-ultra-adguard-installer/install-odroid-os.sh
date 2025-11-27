@@ -6,7 +6,7 @@ mount /dev/nvme0n1p2 /mnt
 
 echo 'Set root password'
 nixos-enter --root /mnt -c 'passwd root'
-echo 'Set trader password'
+echo 'Set adguard password'
 nixos-enter --root /mnt -c 'passwd adguard'
 
 umount /dev/nvme0n1p2
