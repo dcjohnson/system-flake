@@ -56,7 +56,30 @@
       nixosConfigurations = rec {
         odroid-h4-nas = odroid-h4.nas-v1.default;
         odroid-h4-schwab = odroid-h4.schwab-v1.default;
+        odroid-h4-adguard = odroid-h4.adguard-v1.default;
+
         odroid-h4 = {
+          adguard-v1 = {
+            default = nixpkgs.lib.nixosSystem {
+              specialArgs = {
+                inherit disko;
+              };
+              pkgs = dpkgs;
+              modules = [
+                ./modules/odroid-h4/adguard-server-nixos/default.nix
+              ];
+            };
+
+            installer = nixpkgs.lib.nixosSystem {
+              specialArgs = {
+                inherit disko;
+              };
+              pkgs = dpkgs;
+              modules = [
+                ./modules/odroid-h4/adguard-server-nixos/default-installer.nix
+              ];
+            };
+          };
           schwab-v1 = {
             default = nixpkgs.lib.nixosSystem {
               specialArgs = {
