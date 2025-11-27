@@ -27,22 +27,16 @@
 
   boot.supportedFilesystems = [ ];
 
-  fileSystems."/mnt/nas" = {
-    device = "nas.homenet:/mnt/nas";
-    fsType = "nfs";
-  };
-
   # Enable networking
   networking = {
     firewall.allowedTCPPorts = [
-      8182
       22
     ];
 
     useDHCP = lib.mkDefault true;
     networkmanager.enable = true;
-    hostId = "1ca2fdc2";
-    hostName = "schwab1"; # Define your hostname.
+    hostId = "1ca2fdc3";
+    hostName = "adguard"; # Define your hostname.
     wireless.enable = false; # Enables wireless support via wpa_supplicant.
   };
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;

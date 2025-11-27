@@ -57,9 +57,9 @@
     };
 
     # Define a user account. Don't forget to set a password with ‘passwd’.
-    users.users.nas = {
+    users.users.installer = {
       isNormalUser = true;
-      description = "nas";
+      description = "installer";
       extraGroups = [
         "networkmanager"
         "wheel"
