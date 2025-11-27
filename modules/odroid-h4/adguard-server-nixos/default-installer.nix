@@ -75,7 +75,7 @@
     # $ nix search wget
     environment.systemPackages = with pkgs; [
       neovim
-      djohnson-packages.installers.odroid-h4-adguard-server-installer
+      djohnson-packages.installers.odroid-h4-ultra-adguard-installer
     ];
 
     # Some programs need SUID wrappers, can be configured further or are
