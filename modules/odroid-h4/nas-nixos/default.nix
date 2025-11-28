@@ -58,7 +58,7 @@
           #"security" = "user";
           #"read only" = "no";
           #"guest account" = "nasguest";
-	  "vfs objects" = "streams_xattr";
+          "vfs objects" = "streams_xattr";
         };
       };
       openFirewall = true;
@@ -124,6 +124,7 @@
       neovim
       wget
       curl
+      samba4Full
       zfs
       dhcpcd
     ];
