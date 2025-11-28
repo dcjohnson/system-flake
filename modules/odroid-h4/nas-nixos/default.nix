@@ -55,7 +55,6 @@
           "usershare max shares" = "100";
           "usershare allow guests" = "yes";
           "usershare owner only" = "no";
-          "usershare read only" = "no";
         };
       };
       openFirewall = true;
@@ -80,15 +79,46 @@
     };
 
     # Define a user account. Don't forget to set a password with ‘passwd’.
-    users.users.nas = {
-      isNormalUser = true;
-      description = "nas";
-      extraGroups = [
-        "networkmanager"
-        "wheel"
-      ];
-      packages = with pkgs; [
-      ];
+    users = {
+      groups = {
+        nas = {
+          gid = 1000;
+        };
+      };
+      users = {
+        nas = {
+          isNormalUser = true;
+          description = "nas";
+          extraGroups = [
+            "networkmanager"
+            "wheel"
+          ];
+          packages = with pkgs; [ ];
+        };
+
+        admin = {
+          isNormalUser = true;
+          description = "administrator";
+          extraGroups = [
+            "networkmanager"
+            "wheel"
+            "nas"
+          ];
+          packages = with pkgs; [ ];
+        };
+
+        nasguest = {
+          isSystemUser = true;
+          description = "nas guest";
+          group = "nas";
+          extraGroups = [
+            "networkmanager"
+            "wheel"
+          ];
+          uid = 70;
+          packages = with pkgs; [ ];
+        };
+      };
     };
 
     # Install firefox.
