@@ -53,12 +53,8 @@
         global = {
           "usershare path" = "/var/lib/samba/usershares";
           "usershare max shares" = "100";
-          "usershare allow guests" = "no";
-          "usershare owner only" = "yes";
-        };
-        nasguest = {
-          "path" = "/mnt/nas";
-          "read only" = "no";
+          "usershare allow guests" = "yes";
+          "usershare owner only" = "no";
         };
       };
       openFirewall = true;
