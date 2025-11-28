@@ -31,7 +31,13 @@
   networking = {
     firewall.allowedTCPPorts = [
       3000
+      80
+      53
       22
+    ];
+
+    firewall.allowedUDPPorts = [
+      53
     ];
 
     useDHCP = lib.mkDefault true;
