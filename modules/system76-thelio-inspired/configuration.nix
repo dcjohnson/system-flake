@@ -198,6 +198,7 @@
     jq
     zip
     unzip
+    python3Full
     exiftool
 
     # gaming stuff
