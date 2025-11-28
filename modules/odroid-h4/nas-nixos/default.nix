@@ -55,6 +55,8 @@
           "usershare max shares" = "100";
           "usershare allow guests" = "yes";
           "usershare owner only" = "no";
+          "security" = "user";
+          "guest account" = "nasguest";
         };
       };
       openFirewall = true;
