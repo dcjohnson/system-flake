@@ -54,7 +54,7 @@
           "usershare path" = "/var/lib/samba/usershares";
           "usershare max shares" = "100";
           "usershare allow guests" = "yes";
-          "usershare owner only" = "no";
+          "usershare owner only" = "yes";
         };
       };
       openFirewall = true;
@@ -86,16 +86,6 @@
         };
       };
       users = {
-        nas = {
-          isNormalUser = true;
-          description = "nas";
-          extraGroups = [
-            "networkmanager"
-            "wheel"
-          ];
-          packages = with pkgs; [ ];
-        };
-
         admin = {
           isNormalUser = true;
           description = "administrator";
