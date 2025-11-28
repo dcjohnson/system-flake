@@ -59,9 +59,6 @@
           "read only" = "no";
           "guest account" = "nasguest";
         };
-        "nasguest" = {
-          "read only" = "no";
-        };
       };
       openFirewall = true;
     };
