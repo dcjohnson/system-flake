@@ -55,9 +55,10 @@
           "usershare max shares" = "100";
           "usershare allow guests" = "yes";
           "usershare owner only" = "no";
-          "security" = "user";
-          "read only" = "no";
-          "guest account" = "nasguest";
+          #"security" = "user";
+          #"read only" = "no";
+          #"guest account" = "nasguest";
+	  "vfs objects" = "streams_xattr";
         };
       };
       openFirewall = true;
