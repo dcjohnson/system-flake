@@ -47,6 +47,11 @@
       };
     };
 
+    # Must also enable these properties on the zfs share.
+    # sharesmb is for sharing samba
+    # xattr is for ios compatibility
+    # sudo zfs set sharesmb=on zroot/zfs_nas
+    # sudo zfs set xattr=on zroot/zfs_nas
     services.samba = {
       enable = true;
       settings = {
