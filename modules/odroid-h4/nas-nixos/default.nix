@@ -60,11 +60,6 @@
       openFirewall = true;
     };
 
-    services.samba-wsdd = {
-      enable = true;
-      openFirewall = true;
-    };
-
     services.zfs = {
       autoScrub.enable = true;
       autoSnapshot.enable = true;
