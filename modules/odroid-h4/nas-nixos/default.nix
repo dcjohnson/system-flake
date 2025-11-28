@@ -56,6 +56,7 @@
           "usershare allow guests" = "yes";
           "usershare owner only" = "no";
           "security" = "user";
+          "read only" = "no";
           "guest account" = "nasguest";
         };
       };
