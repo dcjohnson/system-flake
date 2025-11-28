@@ -182,6 +182,8 @@
     bftpd
     parted
     vlc
+    dig
+    dnslookup
     file
     wget
     wireguard-tools
