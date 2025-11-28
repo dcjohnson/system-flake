@@ -55,6 +55,7 @@
           "usershare max shares" = "100";
           "usershare allow guests" = "yes";
           "usershare owner only" = "no";
+          "usershare read only" = "no";
         };
       };
       openFirewall = true;
