@@ -119,6 +119,7 @@
       sl
       texliveFull
       gnumake
+      wireguard-tools
     ];
 
     environment.gnome.excludePackages = with pkgs; [
