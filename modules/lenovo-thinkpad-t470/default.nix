@@ -38,6 +38,7 @@
     };
     services.displayManager.defaultSession = "gnome";
     services.xserver.desktopManager.gnome.enable = true;
+    services.rpcbind.enable = true;
 
     # Configure keymap in X11
     services.xserver.xkb = {
@@ -50,7 +51,6 @@
 
     # Enable sound with pipewire.
     services.pulseaudio.enable = false;
-    security.rtkit.enable = true;
     services.pipewire = {
       enable = true;
       alsa.enable = true;
@@ -103,11 +103,25 @@
       curl
       jetbrains-mono
       alsa-utils
+      nfs-utils
       sl
       texliveFull
       gnumake
       wireguard-tools
     ];
+    security = {
+      wrappers = {
+        "mount.nfs" = {
+          setuid = true;
+          owner = "root";
+          group = "root";
+          source = "${pkgs.nfs-utils}/bin/mount.nfs";
+        };
+      };
+      rtkit = {
+        enable = true;
+      };
+    };
 
     environment.gnome.excludePackages = with pkgs; [
       baobab # disk usage analyzer

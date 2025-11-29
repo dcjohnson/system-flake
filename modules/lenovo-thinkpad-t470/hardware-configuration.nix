@@ -20,10 +20,16 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
+  boot.supportedFilesystems = [ "nfs" ];
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/c66249d6-fab4-4e8d-93fb-071eb1abc210";
     fsType = "ext4";
+  };
+
+  fileSystems."/mnt/nas" = {
+    device = "nas.homenet:/mnt/nas";
+    fsType = "nfs";
   };
 
   swapDevices = [

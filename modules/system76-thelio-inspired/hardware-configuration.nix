@@ -22,6 +22,7 @@
   boot.initrd.kernelModules = [ "ntsync" ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
+  boot.supportedFilesystems = [ "nfs" ];
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/41fa5b97-014d-421a-b3c0-c3c455d662be";

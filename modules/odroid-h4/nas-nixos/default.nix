@@ -41,6 +41,8 @@
       LC_TIME = "en_US.UTF-8";
     };
 
+    # for nfs
+    # sudo zfs set sharenfs="rw=192.168.100.0/24,rw=192.168.88.0/24,sec=sys,all_squash,anonuid=70,anongid=1000" zroot/zfs_nas
     services.nfs = {
       server = {
         enable = true;
