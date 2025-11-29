@@ -30,13 +30,37 @@
     { device = "/dev/disk/by-uuid/f43c2ce7-d139-42f9-94da-f0fcbe231239"; }
   ];
 
-  # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
-  # (the default) this is the recommended approach. When using systemd-networkd it's
-  # still possible to use this option, but it's recommended to use it in conjunction
-  # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
-  networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp0s31f6.useDHCP = lib.mkDefault true;
-  # networking.interfaces.wlp4s0.useDHCP = lib.mkDefault true;
+  networking = {
+    hostName = "nixos"; # Define your hostname.
+
+    networkmanager.enable = true;
+
+    useDHCP = lib.mkDefault true;
+
+    wg-quick.interfaces = {
+      wg0 = {
+        address = [
+          "192.168.100.2"
+        ];
+        dns = [
+          "192.168.88.1"
+        ];
+        privateKeyFile = "/root/wireguard-keys/privatekey";
+        generatePrivateKeyFile = true;
+
+        peers = [
+          {
+            publicKey = "9vutSlRX+xoepVItaB7FcQXXx8XYYqMTBovuqusO/UM=";
+            allowedIPs = [
+              "0.0.0.0/0"
+            ];
+            endpoint = "104.9.83.162:13231";
+            persistentKeepalive = 25;
+          }
+        ];
+      };
+    };
+  };
 
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
