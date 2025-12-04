@@ -133,6 +133,8 @@
       curl
       samba4Full
       zfs
+      zip
+      unzip
       dhcpcd
     ];
 
