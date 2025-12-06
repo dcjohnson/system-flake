@@ -181,6 +181,7 @@
     openssl
     ntfs3g
     bftpd
+    xnconvert
     parted
     vlc
     dig

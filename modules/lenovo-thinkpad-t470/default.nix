@@ -92,6 +92,7 @@
       gparted
       minicom
       kitty
+      xnconvert
       git
       chromium
       openssl
