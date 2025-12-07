@@ -30,16 +30,24 @@
     };
 
     services.displayManager = {
-      defaultSession = "hyprland";
-      gdm = {
+      defaultSession = "hyprland-uwsm";
+      sddm = {
+        theme = "${pkgs.sddm-astronaut}/share/sddm/themes/sddm-astronaut-theme";
+        extraPackages = [ pkgs.sddm-astronaut ];
         enable = true;
-        wayland = true;
+        wayland.enable = true;
       };
     };
 
-    programs.hyprland = {
-      enable = true;
-      xwayland = {
+    programs = {
+      hyprland = {
+        enable = true;
+        withUWSM = true;
+        xwayland = {
+          enable = true;
+        };
+      };
+      waybar = {
         enable = true;
       };
     };

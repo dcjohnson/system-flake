@@ -6,6 +6,7 @@
   home.stateVersion = "24.11"; # Comment out for error with "latest" version
   programs.home-manager.enable = true;
   wayland.windowManager.hyprland = {
+    systemd.enable = false;
     enable = true;
     settings = import ./hyprland-configs/config.nix;
   };
