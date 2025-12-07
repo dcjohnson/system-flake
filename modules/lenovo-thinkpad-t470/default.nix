@@ -36,15 +36,6 @@
       };
     };
 
-    # Enable the X11 windowing system.
-    # services.xserver.enable = true;
-
-    # services.displayManager.gdm = {
-    #   enable = true;
-    #   wayland = true;
-    # };
-    # services.displayManager.defaultSession = "gnome";
-    # services.desktopManager.gnome.enable = true;
     services.rpcbind.enable = true;
 
     # Configure keymap in X11
