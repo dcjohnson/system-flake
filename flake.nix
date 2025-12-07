@@ -63,7 +63,7 @@
         pkgs = dpkgs;
 
         modules = [
-          ./modules/home-manager/hyprland.nix
+          ./modules/home-manager/dcj.nix
         ];
       };
 

@@ -1,13 +1,4 @@
-{ pkgs, ... }:
-{
-
-  home.username = "dcj";
-  home.homeDirectory = "/home/dcj";
-  home.stateVersion = "24.11"; # Comment out for error with "latest" version
-  programs.home-manager.enable = true;
-  wayland.windowManager.hyprland = {
-    enable = true;
-    settings = {
+     {
       monitor = ",preferred,auto,auto";
 
       "$terminal" = "kitty";
@@ -293,5 +284,3 @@
         "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
       ];
     };
-  };
-}
