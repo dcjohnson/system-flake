@@ -123,12 +123,19 @@
       yazi
       hyprlauncher
       hyprland
+      waybar
+      font-awesome
       nfs-utils
       sl
       texliveFull
       gnumake
       wireguard-tools
     ];
+    fonts.packages = with pkgs; [
+      font-awesome
+      jetbrains-mono
+    ];
+
     security = {
       wrappers = {
         "mount.nfs" = {
