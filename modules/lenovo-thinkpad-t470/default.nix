@@ -31,12 +31,10 @@
 
     services.displayManager = {
       defaultSession = "hyprland-uwsm";
-      sddm = {
-        theme = "${pkgs.sddm-astronaut}/share/sddm/themes/sddm-astronaut-theme";
-        extraPackages = [ pkgs.sddm-astronaut ];
+      gdm = {
         enable = true;
-        wayland.enable = true;
-      };
+	wayland = true;
+	};
     };
 
     programs = {
