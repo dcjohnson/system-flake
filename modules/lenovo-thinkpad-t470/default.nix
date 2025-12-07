@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs,  ... }:
 
 {
   imports = [
@@ -90,6 +90,7 @@
       gparted
       minicom
       kitty
+      home-manager
       xnconvert
       git
       chromium
