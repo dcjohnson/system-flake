@@ -29,15 +29,22 @@
       LC_TIME = "en_US.UTF-8";
     };
 
-    # Enable the X11 windowing system.
-    services.xserver.enable = true;
-
-    services.displayManager.gdm = {
+    programs.hyprland = {
       enable = true;
-      wayland = true;
+      xwayland = {
+        enable = true;
+      };
     };
-    services.displayManager.defaultSession = "gnome";
-    services.desktopManager.gnome.enable = true;
+
+    # Enable the X11 windowing system.
+    # services.xserver.enable = true;
+
+    # services.displayManager.gdm = {
+    #   enable = true;
+    #   wayland = true;
+    # };
+    # services.displayManager.defaultSession = "gnome";
+    # services.desktopManager.gnome.enable = true;
     services.rpcbind.enable = true;
 
     # Configure keymap in X11
@@ -104,6 +111,10 @@
       curl
       jetbrains-mono
       alsa-utils
+      kdePackages.dolphin
+      yazi
+      hyprlauncher
+      hyprland
       nfs-utils
       sl
       texliveFull
@@ -123,36 +134,6 @@
         enable = true;
       };
     };
-
-    environment.gnome.excludePackages = with pkgs; [
-      baobab # disk usage analyzer
-      cheese # photo booth
-      eog # image viewer
-      epiphany # web browser
-      gedit # text editor
-      simple-scan # document scanner
-      totem # video player
-      yelp # help viewer
-      evince # document viewer
-      file-roller # archive manager
-      geary # email client
-      seahorse # password manager
-
-      # these should be self explanatory
-      gnome-calculator
-      gnome-calendar
-      gnome-characters
-      gnome-clocks
-      gnome-contacts
-      gnome-font-viewer
-      gnome-logs
-      gnome-maps
-      gnome-music
-      gnome-screenshot
-      gnome-system-monitor
-      gnome-weather
-      gnome-connections
-    ];
 
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.
