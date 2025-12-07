@@ -29,6 +29,14 @@
       LC_TIME = "en_US.UTF-8";
     };
 
+    services.displayManager = {
+      defaultSession = "hyprland";
+      gdm = {
+        enable = true;
+        wayland = true;
+      };
+    };
+
     programs.hyprland = {
       enable = true;
       xwayland = {
