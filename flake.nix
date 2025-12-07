@@ -15,9 +15,6 @@
       url = "github:nix-community/home-manager?ref=release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # hyprland.url = "github:hyprwm/Hyprland";
-
   };
 
   outputs =
@@ -28,7 +25,6 @@
       disko,
       naersk,
       home-manager,
-      # hyprland,
     }@inputs:
     let
       system = "x86_64-linux";
