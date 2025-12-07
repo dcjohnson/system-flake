@@ -16,7 +16,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland.url = "github:hyprwm/Hyprland";
+    # hyprland.url = "github:hyprwm/Hyprland";
 
   };
 
@@ -28,7 +28,7 @@
       disko,
       naersk,
       home-manager,
-      hyprland,
+      # hyprland,
     }@inputs:
     let
       system = "x86_64-linux";
