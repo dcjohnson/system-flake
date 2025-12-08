@@ -44,14 +44,14 @@
         CustomModules = [
           {
             name = "appLauncher";
-            icon = "󱗼";
+            icon = "L";
             command = "hyprlauncher";
           }
         ];
 
         updates = {
           check_cmd = "checkupdates; paru -Qua";
-          update_cmd = "alacritty -e bash -c \"paru; echo Done - Press enter to exit; read\" &";
+          update_cmd = "kitty bash -c \"paru; echo Done - Press enter to exit; read\" &";
         };
 
         workspaces = {
