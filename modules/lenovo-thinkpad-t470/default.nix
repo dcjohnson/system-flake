@@ -119,6 +119,7 @@
       hyprlauncher
       hyprland
       ashell
+      networkmanagerapplet
       font-awesome
       nfs-utils
       sl
