@@ -25,7 +25,6 @@
           left = [
             [
               "appLauncher"
-              "Updates"
               "Workspaces"
             ]
           ];
@@ -41,18 +40,13 @@
           ];
         };
 
-        CustomModules = [
+        CustomModule = [
           {
             name = "appLauncher";
-            icon = "L";
+            icon = "󱗼";
             command = "hyprlauncher";
           }
         ];
-
-        updates = {
-          check_cmd = "checkupdates; paru -Qua";
-          update_cmd = "kitty bash -c \"paru; echo Done - Press enter to exit; read\" &";
-        };
 
         workspaces = {
           enable_workspace_filling = true;
