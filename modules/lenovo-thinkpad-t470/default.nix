@@ -62,6 +62,7 @@
 
     # Enable sound with pipewire.
     services.pulseaudio.enable = false;
+    services.avahi.enable = true;
     services.pipewire = {
       enable = true;
       alsa.enable = true;
