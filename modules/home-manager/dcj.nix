@@ -1,6 +1,5 @@
 { pkgs, ... }:
 {
-
   home.username = "dcj";
   home.homeDirectory = "/home/dcj";
   home.stateVersion = "24.11"; # Comment out for error with "latest" version
@@ -39,6 +38,16 @@
           ];
         };
 
+        system_info = builtins.fromTOML ''
+          indicators = [
+                      "Cpu",
+                      "Memory",
+                      "MemorySwap",
+                      {Disk = "/" },
+                      "UploadSpeed",
+                      "DownloadSpeed",
+                    ]'';
+
         CustomModule = [
           {
             name = "appLauncher";
@@ -61,7 +70,7 @@
           audio_sources_more_cmd = "pavucontrol -t 4";
           wifi_more_cmd = "nm-connection-editor";
           vpn_more_cmd = "nm-connection-editor";
-          bluetooth_more_cmd = "blueman";
+          bluetooth_more_cmd = "blueman-manager";
         };
 
         appearance = {

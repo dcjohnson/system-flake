@@ -126,6 +126,10 @@
       pavucontrol
       playerctl
       blueman
+      bluez
+      bluez-alsa
+      bluez-tools
+      bluez-headers
       nfs-utils
       sl
       texliveFull
