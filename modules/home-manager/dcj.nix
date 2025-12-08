@@ -12,7 +12,6 @@
         enable = true;
       };
       settings = {
-
         log_level = "warn";
         outputs = {
           Targets = [ "eDP-1" ];
@@ -62,7 +61,7 @@
           audio_sources_more_cmd = "pavucontrol -t 4";
           wifi_more_cmd = "nm-connection-editor";
           vpn_more_cmd = "nm-connection-editor";
-          bluetooth_more_cmd = "blueberry";
+          bluetooth_more_cmd = "blueman";
         };
 
         appearance = {
@@ -94,9 +93,7 @@
           secondary_color = {
             base = "#0c0d14";
           };
-
         };
-
       };
     };
   };

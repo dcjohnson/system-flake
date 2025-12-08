@@ -54,6 +54,8 @@
       layout = "us";
       variant = "";
     };
+    services.blueman.enable = true;
+    services.playerctld.enable = true;
 
     # Enable CUPS to print documents.
     services.printing.enable = true;
@@ -121,6 +123,9 @@
       ashell
       networkmanagerapplet
       font-awesome
+      pavucontrol
+      playerctl
+      blueman
       nfs-utils
       sl
       texliveFull
