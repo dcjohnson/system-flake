@@ -33,8 +33,8 @@
       defaultSession = "hyprland-uwsm";
       gdm = {
         enable = true;
-	wayland = true;
-	};
+        wayland = true;
+      };
     };
 
     programs = {
@@ -44,9 +44,6 @@
         xwayland = {
           enable = true;
         };
-      };
-      waybar = {
-        enable = true;
       };
     };
 
@@ -121,7 +118,7 @@
       yazi
       hyprlauncher
       hyprland
-      waybar
+      ashell
       font-awesome
       nfs-utils
       sl
