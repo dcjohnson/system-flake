@@ -117,12 +117,12 @@
       curl
       jetbrains-mono
       alsa-utils
-      kdePackages.dolphin
+      nautilus
+      gnome-control-center
       yazi
       hyprlauncher
       hyprland
       ashell
-      networkmanagerapplet
       font-awesome
       pavucontrol
       playerctl
