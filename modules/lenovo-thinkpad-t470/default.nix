@@ -119,6 +119,7 @@
       alsa-utils
       nautilus
       gnome-control-center
+      networkmanagerapplet
       yazi
       hyprlauncher
       hyprland
