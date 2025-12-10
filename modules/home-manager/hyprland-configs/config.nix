@@ -2,7 +2,7 @@
   monitor = ",preferred,auto,auto";
 
   "$terminal" = "kitty";
-  "$fileManager" = "nautilus";
+  "$fileManager" = "dolphin";
   "$menu" = "hyprlauncher";
   "$browser" = "chromium";
 
