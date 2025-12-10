@@ -68,9 +68,9 @@
           lock_cmd = "playerctl --all-players pause; nixGL hyprlock &";
           audio_sinks_more_cmd = "pavucontrol -t 3";
           audio_sources_more_cmd = "pavucontrol -t 4";
-          wifi_more_cmd = "gnome-control-center wifi";
-          vpn_more_cmd = "gnome-control-center network";
-          bluetooth_more_cmd = "gnome-control-center bluetooth";
+          wifi_more_cmd = "nm-connection-editor";
+          vpn_more_cmd = "nm-connection-editor";
+          bluetooth_more_cmd = "blueman";
         };
 
         appearance = {

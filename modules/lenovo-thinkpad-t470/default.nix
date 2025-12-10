@@ -31,9 +31,16 @@
 
     services.displayManager = {
       defaultSession = "hyprland-uwsm";
-      gdm = {
+      #gdm = {
+      #  enable = true;
+      #  wayland = true;
+      #};
+
+      sddm = {
+        theme = "${pkgs.sddm-astronaut}/share/sddm/themes/sddm-astronaut-theme";
+        extraPackages = [ pkgs.sddm-astronaut ];
         enable = true;
-        wayland = true;
+        wayland.enable = true;
       };
     };
 
@@ -117,13 +124,12 @@
       curl
       jetbrains-mono
       alsa-utils
-      nautilus
-      gnome-control-center
       networkmanagerapplet
       yazi
       hyprlauncher
       hyprland
       ashell
+      kdePackages.dolphin
       font-awesome
       pavucontrol
       playerctl
