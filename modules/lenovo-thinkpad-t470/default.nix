@@ -128,6 +128,7 @@
       yazi
       hyprlauncher
       hyprland
+      hyprpaper
       ashell
       font-awesome
       nautilus
