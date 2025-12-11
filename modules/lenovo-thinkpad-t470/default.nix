@@ -133,6 +133,7 @@
       nautilus
       pavucontrol
       playerctl
+      pasystray
       blueman
       bluez
       bluez-alsa
