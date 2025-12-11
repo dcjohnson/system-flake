@@ -129,8 +129,8 @@
       hyprlauncher
       hyprland
       ashell
-      kdePackages.dolphin
       font-awesome
+      nautilus
       pavucontrol
       playerctl
       blueman
