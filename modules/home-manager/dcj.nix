@@ -15,6 +15,6 @@
   services.pasystray.enable = true;
   services.hyprpaper = {
     enable = true;
-    settings = import ./configs.hyprpaper.nix;
+    settings = import ./configs/hyprpaper.nix;
   };
 }
