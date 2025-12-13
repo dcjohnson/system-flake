@@ -58,7 +58,7 @@
     };
 
     settings = {
-      lock_cmd = "playerctl --all-players pause; nixGL hyprlock &";
+      lock_cmd = "hyprlock &";
       audio_sinks_more_cmd = "pavucontrol -t 3";
       audio_sources_more_cmd = "pavucontrol -t 4";
       wifi_more_cmd = "nm-connection-editor";

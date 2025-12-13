@@ -13,6 +13,9 @@
     };
 
     programs = {
+      hyprlock = {
+        enable = true;
+      };
       hyprland = {
         enable = true;
         withUWSM = true;
@@ -47,6 +50,7 @@
       alsa-utils
       networkmanagerapplet
       yazi
+      hyprlock
       hyprlauncher
       hyprland
       hyprpaper
