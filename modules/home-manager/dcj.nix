@@ -1,8 +1,18 @@
 { pkgs, ... }:
 {
-  home.username = "dcj";
-  home.homeDirectory = "/home/dcj";
-  home.stateVersion = "24.11"; # Comment out for error with "latest" version
+  home = {
+    username = "dcj";
+    homeDirectory = "/home/dcj";
+    stateVersion = "24.11"; # Comment out for error with "latest" version
+    file = {
+      "wallpapers" = {
+        enable = true;
+        target = "./.config/wallpapers";
+        source = ./wallpapers;
+        recursive = true;
+      };
+    };
+  };
   programs = {
     home-manager = {
       enable = true;
