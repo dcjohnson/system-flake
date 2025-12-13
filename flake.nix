@@ -10,12 +10,12 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
-    
+
     rose-pine-hyprcursor = {
       url = "github:ndom91/rose-pine-hyprcursor";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
+
     home-manager = {
       url = "github:nix-community/home-manager?ref=release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -53,9 +53,9 @@
                 src = inputs.schwab-auto-trader;
               };
             };
-	    external-3rd-party-packages = {
-	      rose-pine-hyprcursor = rose-pine-hyprcursor.packages.${system}.default;
-	    };
+            external-3rd-party-packages = {
+              rose-pine-hyprcursor = rose-pine-hyprcursor.packages.${system}.default;
+            };
           })
         ];
       };
