@@ -131,6 +131,7 @@
       hyprpaper
       hyprpolkitagent
       hyprsysteminfo
+      external-3rd-party-packages.rose-pine-hyprcursor
       cliphist
       ashell
       font-awesome
@@ -143,7 +144,6 @@
       bluez-alsa
       bluez-tools
       bluez-headers
-      nwg-look
       nfs-utils
       sl
       texliveFull
