@@ -25,6 +25,9 @@
     settings = import ./configs/hyprland.nix;
   };
   services = {
+    hyprpolkitagent = {
+      enable = true;
+    };
     network-manager-applet = {
       enable = true;
     };

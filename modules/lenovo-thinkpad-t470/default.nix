@@ -129,6 +129,8 @@
       hyprlauncher
       hyprland
       hyprpaper
+      hyprpolkitagent
+      hyprsysteminfo
       ashell
       font-awesome
       nautilus
