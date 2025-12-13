@@ -7,9 +7,6 @@
     home-manager = {
       enable = true;
     };
-    nm-applet = {
-      enable = true;
-    };
     ashell = import ./configs/ashell.nix;
   };
   wayland.windowManager.hyprland = {
@@ -18,6 +15,9 @@
     settings = import ./configs/hyprland.nix;
   };
   services = {
+    network-manager-applet = {
+      enable = true;
+    };
     pasystray = {
       enable = true;
     };
