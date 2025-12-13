@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ../hyprland/hyprland.nix
     ./hardware-configuration.nix
   ];
 
@@ -29,31 +30,6 @@
       LC_TIME = "en_US.UTF-8";
     };
 
-    services.displayManager = {
-      defaultSession = "hyprland-uwsm";
-      #gdm = {
-      #  enable = true;
-      #  wayland = true;
-      #};
-
-      sddm = {
-        theme = "${pkgs.sddm-astronaut}/share/sddm/themes/sddm-astronaut-theme";
-        extraPackages = [ pkgs.sddm-astronaut ];
-        enable = true;
-        wayland.enable = true;
-      };
-    };
-
-    programs = {
-      hyprland = {
-        enable = true;
-        withUWSM = true;
-        xwayland = {
-          enable = true;
-        };
-      };
-    };
-
     services.rpcbind.enable = true;
 
     # Configure keymap in X11
@@ -61,30 +37,8 @@
       layout = "us";
       variant = "";
     };
-    services.blueman.enable = true;
-    services.playerctld.enable = true;
-
     # Enable CUPS to print documents.
     services.printing.enable = true;
-
-    # Enable sound with pipewire.
-    services.pulseaudio.enable = false;
-    services.avahi.enable = true;
-    services.pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-      # If you want to use JACK applications, uncomment this
-      #jack.enable = true;
-
-      # use the example session manager (no others are packaged yet so this is enabled by default,
-      # no need to redefine it in your config for now)
-      #media-session.enable = true;
-    };
-
-    # Enable touchpad support (enabled default in most desktopManager).
-    # services.xserver.libinput.enable = true;
 
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users.users.dcj = {
@@ -111,7 +65,6 @@
       gparted
       minicom
       kitty
-      home-manager
       xnconvert
       git
       chromium
@@ -123,36 +76,11 @@
       wget
       curl
       jetbrains-mono
-      alsa-utils
-      networkmanagerapplet
-      yazi
-      hyprlauncher
-      hyprland
-      hyprpaper
-      hyprpolkitagent
-      hyprsysteminfo
-      external-3rd-party-packages.rose-pine-hyprcursor
-      cliphist
-      ashell
-      font-awesome
-      nautilus
-      pavucontrol
-      playerctl
-      pasystray
-      blueman
-      bluez
-      bluez-alsa
-      bluez-tools
-      bluez-headers
       nfs-utils
       sl
       texliveFull
       gnumake
       wireguard-tools
-    ];
-    fonts.packages = with pkgs; [
-      font-awesome
-      jetbrains-mono
     ];
 
     security = {
@@ -169,31 +97,6 @@
       };
     };
 
-    # Some programs need SUID wrappers, can be configured further or are
-    # started in user sessions.
-    # programs.mtr.enable = true;
-    # programs.gnupg.agent = {
-    #   enable = true;
-    #   enableSSHSupport = true;
-    # };
-
-    # List services that you want to enable:
-
-    # Enable the OpenSSH daemon.
-    # services.openssh.enable = true;
-
-    # Open ports in the firewall.
-    # networking.firewall.allowedTCPPorts = [ ... ];
-    # networking.firewall.allowedUDPPorts = [ ... ];
-    # Or disable the firewall altogether.
-    # networking.firewall.enable = false;
-
-    # This value determines the NixOS release from which the default
-    # settings for stateful data, like file locations and database versions
-    # on your system were taken. It‘s perfectly fine and recommended to leave
-    # this value at the release version of the first install of this system.
-    # Before changing this value read the documentation for this option
-    # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-    system.stateVersion = "24.11"; # Did you read the comment?
+    system.stateVersion = "24.11"; # Do not change.
   };
 }
