@@ -1,3 +1,5 @@
+hyprland lock screen doesn't work
+
 # system-flake
 My System Flake
 

@@ -131,6 +131,7 @@
       hyprpaper
       hyprpolkitagent
       hyprsysteminfo
+      cliphist
       ashell
       font-awesome
       nautilus
@@ -142,6 +143,7 @@
       bluez-alsa
       bluez-tools
       bluez-headers
+      nwg-look
       nfs-utils
       sl
       texliveFull

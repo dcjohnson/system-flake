@@ -25,6 +25,10 @@
     settings = import ./configs/hyprland.nix;
   };
   services = {
+    cliphist = {
+      enable = true;
+      allowImages = true;
+    };
     hyprpolkitagent = {
       enable = true;
     };
