@@ -18,12 +18,13 @@
       enable = true;
     };
 
-  ashell = { enable = true;
-  systemd = {
-    enable = true;
-  };
-settings = import ./configs/ashell.nix;
-};
+    ashell = {
+      enable = true;
+      systemd = {
+        enable = true;
+      };
+      settings = import ./configs/ashell.nix;
+    };
   };
   wayland.windowManager.hyprland = {
     systemd.enable = false;
