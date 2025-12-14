@@ -1,5 +1,22 @@
 {
   "nodes": {
+    "ashell": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1764791272,
+        "narHash": "sha256-l9ymg9MQFBUXogHrdcaruKPRGwqlVr7StKuoF7SwChU=",
+        "owner": "MalpenZibo",
+        "repo": "ashell",
+        "rev": "a8549c9e37ccb9e5479e1b2b09561a5c648f77f7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "MalpenZibo",
+        "ref": "main",
+        "repo": "ashell",
+        "type": "github"
+      }
+    },
     "disko": {
       "inputs": {
         "nixpkgs": [
@@ -98,6 +115,7 @@
     },
     "root": {
       "inputs": {
+        "ashell": "ashell",
         "disko": "disko",
         "home-manager": "home-manager",
         "naersk": "naersk",

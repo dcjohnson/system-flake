@@ -48,8 +48,10 @@
       home-manager
       chromium
       alsa-utils
+      brightnessctl
       networkmanagerapplet
       yazi
+      hypridle
       hyprlock
       hyprlauncher
       hyprland

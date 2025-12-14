@@ -7,7 +7,14 @@
     naersk.url = "github:nix-community/naersk/master";
     naersk.flake = false;
 
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+    ashell = {
+      url = "github:MalpenZibo/ashell?ref=main";
+      flake = false;
+    };
+    nixpkgs = {
+      url = "github:nixos/nixpkgs/nixos-25.11";
+      inputs.ashell.follows = "ashell";
+    };
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -31,6 +38,7 @@
       naersk,
       rose-pine-hyprcursor,
       home-manager,
+      ...
     }@inputs:
     let
       system = "x86_64-linux";

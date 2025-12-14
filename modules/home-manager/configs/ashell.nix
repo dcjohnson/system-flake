@@ -1,8 +1,4 @@
 {
-  enable = true;
-  systemd = {
-    enable = true;
-  };
   settings = {
     log_level = "warn";
     outputs = {

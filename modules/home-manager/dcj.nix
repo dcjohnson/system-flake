@@ -17,7 +17,13 @@
     home-manager = {
       enable = true;
     };
-    ashell = import ./configs/ashell.nix;
+
+  ashell = { enable = true;
+  systemd = {
+    enable = true;
+  };
+settings = import ./configs/ashell.nix;
+};
   };
   wayland.windowManager.hyprland = {
     systemd.enable = false;
@@ -37,6 +43,10 @@
     };
     pasystray = {
       enable = false;
+    };
+    hypridle = {
+      enable = true;
+      settings = import ./configs/hypridle.nix;
     };
     hyprpaper = {
       enable = true;
