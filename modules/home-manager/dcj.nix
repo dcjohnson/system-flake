@@ -33,7 +33,7 @@
       enable = true;
     };
     network-manager-applet = {
-      enable = true;
+      enable = false;
     };
     pasystray = {
       enable = false;
