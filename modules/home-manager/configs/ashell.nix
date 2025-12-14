@@ -12,7 +12,6 @@
     app_launcher_cmd = "hyprlauncher";
 
     modules = {
-
       left = [
         [
           "appLauncher"
@@ -33,13 +32,13 @@
 
     system_info = builtins.fromTOML ''
       indicators = [
-                  "Cpu",
-                  "Memory",
-                  "MemorySwap",
-                  {Disk = "/" },
-                  "UploadSpeed",
-                  "DownloadSpeed",
-                ]'';
+        "Cpu",
+        "Memory",
+        "MemorySwap",
+        {Disk = "/" },
+        "UploadSpeed",
+        "DownloadSpeed",
+      ]'';
 
     CustomModule = [
       {
@@ -59,6 +58,7 @@
 
     settings = {
       lock_cmd = "hyprlock &";
+      logout_cmd = "kill -9 -1";
       audio_sinks_more_cmd = "pavucontrol -t 3";
       audio_sources_more_cmd = "pavucontrol -t 4";
       wifi_more_cmd = "nm-connection-editor";
