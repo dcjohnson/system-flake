@@ -36,7 +36,7 @@
       enable = true;
     };
     pasystray = {
-      enable = true;
+      enable = false;
     };
     hyprpaper = {
       enable = true;
