@@ -45,17 +45,12 @@
 
     useDHCP = lib.mkDefault true;
 
-    firewall = {
-      checkReversePath = false;
-      allowedUDPPorts = [ 51820 ];
-    };
-
-    wireguard.interfaces = {
+    wg-quick.interfaces = {
       wg0 = {
-        ips = [
-          "192.168.100.2"
+        address = [
+          "192.168.100.2/32"
         ];
-        listenPort = 51820;
+	dns = [ "192.168.88.1" ];
         privateKeyFile = "/root/wireguard-keys/privatekey";
         peers = [
           {
