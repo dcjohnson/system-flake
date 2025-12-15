@@ -7,10 +7,6 @@
     naersk.url = "github:nix-community/naersk/master";
     naersk.flake = false;
 
-    ashell = {
-      url = "github:MalpenZibo/ashell?ref=main";
-    };
-
     nixpkgs = {
       url = "github:nixos/nixpkgs/nixos-25.11";
     };
@@ -38,7 +34,6 @@
       naersk,
       rose-pine-hyprcursor,
       home-manager,
-      ashell,
       ...
     }@inputs:
     let
@@ -63,7 +58,6 @@
               };
             };
             external-3rd-party-packages = {
-              ashell = ashell.packages.${system}.default;
               rose-pine-hyprcursor = rose-pine-hyprcursor.packages.${system}.default;
             };
           })

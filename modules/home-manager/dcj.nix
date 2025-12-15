@@ -23,7 +23,6 @@
       systemd = {
         enable = true;
       };
-      package = pkgs.external-3rd-party-packages.ashell;
       settings = import ./configs/ashell.nix;
     };
   };

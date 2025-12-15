@@ -60,7 +60,6 @@
       hyprsysteminfo
       external-3rd-party-packages.rose-pine-hyprcursor
       cliphist
-      external-3rd-party-packages.ashell
       font-awesome
       nautilus
       pavucontrol
