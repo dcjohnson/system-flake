@@ -39,21 +39,24 @@
   networking = {
     hostName = "nixos"; # Define your hostname.
 
-    networkmanager.enable = true;
+    networkmanager = {
+      enable = true;
+    };
 
     useDHCP = lib.mkDefault true;
 
-    wg-quick.interfaces = {
+    firewall = {
+      checkReversePath = false;
+      allowedUDPPorts = [ 51820 ];
+    };
+
+    wireguard.interfaces = {
       wg0 = {
-        address = [
+        ips = [
           "192.168.100.2"
         ];
-        dns = [
-          "192.168.88.1"
-        ];
+        listenPort = 51820;
         privateKeyFile = "/root/wireguard-keys/privatekey";
-        generatePrivateKeyFile = true;
-
         peers = [
           {
             publicKey = "9vutSlRX+xoepVItaB7FcQXXx8XYYqMTBovuqusO/UM=";
