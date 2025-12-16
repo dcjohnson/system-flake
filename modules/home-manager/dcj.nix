@@ -18,12 +18,10 @@
       enable = true;
     };
 
-    ashell = {
+    waybar = {
       enable = true;
-      systemd = {
-        enable = true;
-      };
-      settings = import ./configs/ashell.nix;
+      settings = import ./configs/waybar/config.nix;
+      style = ./configs/waybar/style.css;
     };
   };
   wayland.windowManager.hyprland = {

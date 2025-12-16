@@ -51,6 +51,7 @@
       brightnessctl
       networkmanagerapplet
       yazi
+      waybar
       hypridle
       hyprlock
       hyprlauncher
