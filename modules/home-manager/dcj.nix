@@ -20,6 +20,9 @@
 
     waybar = {
       enable = true;
+      systemd = {
+        enable = true;
+      };
       settings = import ./configs/waybar/config.nix;
       style = ./configs/waybar/style.css;
     };
