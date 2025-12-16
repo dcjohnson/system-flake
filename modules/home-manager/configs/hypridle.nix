@@ -25,5 +25,4 @@
       on-timeout = "systemctl suspend"; # suspend pc
     }
   ];
-
 }

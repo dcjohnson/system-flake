@@ -50,7 +50,7 @@
         address = [
           "192.168.100.2/32"
         ];
-	dns = [ "192.168.88.1" ];
+        dns = [ "192.168.88.1" ];
         privateKeyFile = "/root/wireguard-keys/privatekey";
         peers = [
           {
