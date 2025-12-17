@@ -6,64 +6,46 @@
     "spacing" = 5;
     "modules-left" = [
       "custom/launcher"
-      "hyprland/window"
-      "custom/texttwo"
-      "custom/textthree"
-      "custom/textfour"
-      "custom/textfive"
+      "hyprland/workspaces"
+      #"hyprland/window"
+      "custom/files"
     ];
     "modules-center" = [
-      "sway/window"
+    #  "sway/window"
     ];
     "modules-right" = [
-      "mpd"
-      "idle_inhibitor"
+      #"mpd"
+      #"idle_inhibitor"
       "temperature"
       "cpu"
       "memory"
       "network"
       "pulseaudio"
-      "backlight"
-      "keyboard-state"
+      #"backlight"
+      #"keyboard-state"
       "battery"
       "battery#bat2"
       "tray"
       "clock"
     ];
+    "hyprland/workspaces" = {};
     "hyprland/window" = {
       "format" = "{class}";
       "max-length" = 20;
-      "rewrite" = {
-        "^(?!.*\\S).*" = "Finder";
-      };
+      #"rewrite" = {
+      #  "^(?!.*\\S).*" = "Finder";
+      #};
     };
     "custom/launcher" = {
       "format" = "🔍";
-      "on-click" = "wofi --show drun";
+      "on-click" = "hyprlauncher";
       "tooltip" = false;
     };
-    "custom/texttwo" = {
+    "custom/files" = {
       "exec" = "echo 'File'";
       "interval" = 60;
       "return-type" = "plain";
       "on-click" = "nautilus";
-    };
-    "custom/textthree" = {
-      "exec" = "echo 'Edit'";
-      "interval" = 60;
-      "return-type" = "plain";
-      "on-click" = "gimp";
-    };
-    "custom/textfour" = {
-      "exec" = "echo 'View'";
-      "interval" = 60;
-      "return-type" = "plain";
-    };
-    "custom/textfive" = {
-      "exec" = "echo 'Help'";
-      "interval" = 60;
-      "return-type" = "plain";
-      "on-click" = "gio open https://github.com/kamlendras/waybar/issues/new";
     };
     "keyboard-state" = {
       "numlock" = true;
