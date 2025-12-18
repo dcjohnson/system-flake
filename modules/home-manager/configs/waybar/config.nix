@@ -5,13 +5,13 @@
     "height" = 24;
     "spacing" = 5;
     "modules-left" = [
-      "custom/launcher"
       "hyprland/workspaces"
+      "custom/launcher"
       #"hyprland/window"
       "custom/files"
     ];
     "modules-center" = [
-    #  "sway/window"
+      #  "sway/window"
     ];
     "modules-right" = [
       #"mpd"
@@ -28,7 +28,15 @@
       "tray"
       "clock"
     ];
-    "hyprland/workspaces" = {};
+    "hyprland/workspaces" = {
+      format = "{icon}";
+      format-icons = {
+        active = "";
+        default = "";
+      };
+      "icon-size" = 10;
+      "sort-by-number" = true;
+    };
     "hyprland/window" = {
       "format" = "{class}";
       "max-length" = 20;
@@ -37,12 +45,13 @@
       #};
     };
     "custom/launcher" = {
-      "format" = "🔍";
+      "format" = "";
+      "icon-size" = 10;
       "on-click" = "hyprlauncher";
       "tooltip" = false;
     };
     "custom/files" = {
-      "exec" = "echo 'File'";
+      "format" = "";
       "interval" = 60;
       "return-type" = "plain";
       "on-click" = "nautilus";
@@ -117,7 +126,7 @@
       "format" = "  {usage}%";
     };
     "memory" = {
-      "format" = " {}%";
+      "format" = "  {}%";
     };
     "temperature" = {
       "thermal-zone" = 2;

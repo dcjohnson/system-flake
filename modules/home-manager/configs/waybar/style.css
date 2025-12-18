@@ -18,16 +18,16 @@ tooltip label {
 }
 
 #workspaces button {
-  padding: 0 5px;
-  background: transparent;
-  color: white;
+  padding: 0 5px; 
+  background: transparent; 
+  color: black;
   border-bottom: 3px solid transparent;
 }
 
 #workspaces button.focused {
   background: #64727d;
   border-bottom: 3px solid white;
-}
+} 
 
 #mode,
 #clock,
