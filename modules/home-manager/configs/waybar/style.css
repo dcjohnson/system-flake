@@ -1,8 +1,8 @@
 * {
   font-size: 16px;
   min-height: 0;
-  border-radius: 1rem;
-  padding: 0.1rem;
+  /* border-radius: 1rem;
+  padding: 0.1rem; */
 }
 
 window#waybar {
@@ -18,15 +18,15 @@ tooltip label {
 }
 
 #workspaces button {
-  padding: 0 5px; 
+  padding: 0 0px; 
   background: transparent; 
   color: black;
-  border-bottom: 3px solid transparent;
+  border-bottom: 0px solid transparent;
 }
 
 #workspaces button.focused {
   background: #64727d;
-  border-bottom: 3px solid white;
+  border-bottom: 0px solid white;
 } 
 
 #mode,
@@ -56,7 +56,7 @@ tooltip label {
 #idle_inhibitor,
 #scratchpad,
 #mpd {
-  margin: 2px;
+  margin: 0px;
   padding-left: 4px;
   padding-right: 4px;
   color: #000000;
@@ -136,7 +136,7 @@ label:focus {
   -gtk-icon-effect: highlight;
   background-color: #eb4d4b;
 }
-
+/*
 #custom-os_button {
   font-size: 32px;
   transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -145,3 +145,4 @@ label:focus {
   background: white;
   color: black;
 }
+*/

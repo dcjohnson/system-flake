@@ -7,14 +7,11 @@
     "modules-left" = [
       "hyprland/workspaces"
       "custom/launcher"
-      #"hyprland/window"
       "custom/files"
+      "hyprland/window"
     ];
-    "modules-center" = [
-      #  "sway/window"
-    ];
+    "modules-center" = [ ];
     "modules-right" = [
-      #"mpd"
       #"idle_inhibitor"
       "temperature"
       "cpu"
@@ -65,49 +62,6 @@
         "unlocked" = "";
       };
     };
-    "sway/mode" = {
-      "format" = "<span style=\"italic\">{}</span>";
-    };
-    "sway/scratchpad" = {
-      "format" = "{icon} {count}";
-      "show-empty" = false;
-      "format-icons" = [
-        ""
-        ""
-      ];
-      "tooltip" = true;
-      "tooltip-format" = "{app}: {title}";
-    };
-    "mpd" = {
-      "format" =
-        "  {title} - {artist} {stateIcon} [{elapsedTime:%M:%S}/{totalTime:%M:%S}] {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}[{songPosition}/{queueLength}] [{volume}%]";
-      "format-disconnected" = " Disconnected";
-      "format-stopped" = " {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped";
-      "unknown-tag" = "N/A";
-      "interval" = 2;
-      "consume-icons" = {
-        "on" = " ";
-      };
-      "random-icons" = {
-        "on" = " ";
-      };
-      "repeat-icons" = {
-        "on" = " ";
-      };
-      "single-icons" = {
-        "on" = "1 ";
-      };
-      "state-icons" = {
-        "paused" = "";
-        "playing" = "";
-      };
-      "tooltip-format" = "MPD (connected)";
-      "tooltip-format-disconnected" = "MPD (disconnected)";
-      "on-click" = "mpc toggle";
-      "on-click-right" = "foot -a ncmpcpp ncmpcpp";
-      "on-scroll-up" = "mpc volume +2";
-      "on-scroll-down" = "mpc volume -2";
-    };
     "idle_inhibitor" = {
       "format" = "{icon}";
       "format-icons" = {
@@ -119,7 +73,7 @@
       "spacing" = 10;
     };
     "clock" = {
-      "format" = "{:%A %B %d %H:%M %p}";
+      "format" = "{:%b %d, %Y %H:%M %p}";
       "tooltip-format" = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
     };
     "cpu" = {
@@ -131,13 +85,13 @@
     "temperature" = {
       "thermal-zone" = 2;
       "hwmon-path" = "/sys/class/hwmon/hwmon2/temp1_input";
-      "critical-threshold" = 80;
-      "format-critical" = "{icon} {temperatureC}°C";
-      "format" = "{icon} {temperatureC}°C";
+      "critical-threshold" = 176;
+      "format-critical" = "{icon} {temperatureF}°F";
+      "format" = "{icon} {temperatureF}°F";
       "format-icons" = [
-        ""
+        #""
         ""
-        ""
+        #""
       ];
     };
     "backlight" = {
