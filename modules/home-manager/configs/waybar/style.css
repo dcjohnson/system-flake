@@ -1,6 +1,6 @@
 * {
-  font-size: 16px;
-  font-family: "JetBrains Mono", "Font Awesome 7 Free";
+  font-size: 14px;
+  font-family: "Sans", "Font Awesome 7 Free";
   min-height: 0;
   /* border-radius: 1rem;
   padding: 0.1rem; */
@@ -71,9 +71,7 @@ tooltip label {
   margin-right: 0;
 }
 
-#clock {
-  font-size: 14px;
-}
+#clock { }
 
 #battery icon {
   color: red;
@@ -137,13 +135,3 @@ label:focus {
   -gtk-icon-effect: highlight;
   background-color: #eb4d4b;
 }
-/*
-#custom-os_button {
-  font-size: 32px;
-  transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-#custom-os_button:hover {
-  background: white;
-  color: black;
-}
-*/

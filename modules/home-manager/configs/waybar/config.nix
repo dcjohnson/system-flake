@@ -13,7 +13,7 @@
     "modules-center" = [ ];
     "modules-right" = [
       #"idle_inhibitor"
-      "temperature"
+      #"temperature"
       "cpu"
       "memory"
       "network"
@@ -37,9 +37,6 @@
     "hyprland/window" = {
       "format" = "{class}";
       "max-length" = 20;
-      #"rewrite" = {
-      #  "^(?!.*\\S).*" = "Finder";
-      #};
     };
     "custom/launcher" = {
       "format" = "";
@@ -152,7 +149,7 @@
         ];
       };
       "on-click" = "pavucontrol";
-      "on-click-right" = "foot -a pw-top pw-top";
+      #"on-click-right" = "foot -a pw-top pw-top";
     };
   };
 }
