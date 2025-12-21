@@ -46,7 +46,8 @@
         ffmpeg-full # Complete FFmpeg with all codecs
         libva # Video Acceleration API
         libva-utils # VA-API utilities (vainfo, etc.)
-        vaapiVdpau # VAAPI driver that uses VDPAU
+        # VAAPI driver that uses VDPAU
+        libva-vdpau-driver
         libvdpau-va-gl # VDPAU driver that uses VA-GL
       ];
 
@@ -183,7 +184,7 @@
     jq
     zip
     unzip
-    python3Full
+    python3Minimal
     exiftool
 
     # gaming stuff

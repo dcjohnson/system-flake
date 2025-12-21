@@ -200,7 +200,7 @@
     "$mainMod, B, exec, $browser"
     "$mainMod, E, exec, $fileManager"
     "$mainMod, V, togglefloating,"
-    "$mainMod, R, exec, $menu"
+    "$mainMod, SPACE, exec, $menu"
     "$mainMod, P, pseudo," # dwindle
     "$mainMod, J, togglesplit," # dwindle
 
