@@ -10,6 +10,7 @@
       "custom/files"
       "custom/lockscreen"
       "custom/logout"
+      "custom/shutdown"
       "hyprland/window"
     ];
     "modules-center" = [ ];
@@ -50,6 +51,12 @@
       "format" = "";
       "icon-size" = 10;
       "on-click" = "kill -9 -1";
+      "tooltip" = false;
+    };
+    "custom/shutdown" = {
+      format = "";
+      "icon-size" = 10;
+      "on-click" = "systemctl reboot";
       "tooltip" = false;
     };
     "custom/launcher" = {
