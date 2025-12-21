@@ -8,6 +8,8 @@
       "hyprland/workspaces"
       "custom/launcher"
       "custom/files"
+      "custom/lockscreen"
+      "custom/logout"
       "hyprland/window"
     ];
     "modules-center" = [ ];
@@ -37,6 +39,18 @@
     "hyprland/window" = {
       "format" = "{class}";
       "max-length" = 20;
+    };
+    "custom/lockscreen" = {
+      "format" = "";
+      "icon-size" = 10;
+      "on-click" = "loginctl lock-session";
+      "tooltip" = false;
+    };
+    "custom/logout" = {
+      "format" = "";
+      "icon-size" = 10;
+      "on-click" = "kill -9 -1";
+      "tooltip" = false;
     };
     "custom/launcher" = {
       "format" = "";
