@@ -10,7 +10,7 @@
       "custom/files"
       "custom/lockscreen"
       "custom/logout"
-      "custom/shutdown"
+      "custom/poweroff"
       "custom/reboot"
       "hyprland/window"
     ];
