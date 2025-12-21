@@ -11,6 +11,7 @@
       "custom/lockscreen"
       "custom/logout"
       "custom/shutdown"
+      "custom/reboot"
       "hyprland/window"
     ];
     "modules-center" = [ ];
@@ -53,8 +54,14 @@
       "on-click" = "kill -9 -1";
       "tooltip" = false;
     };
-    "custom/shutdown" = {
+    "custom/poweroff" = {
       format = "";
+      "icon-size" = 10;
+      "on-click" = "systemctl poweroff";
+      "tooltip" = false;
+    };
+    "custom/reboot" = {
+      format = "";
       "icon-size" = 10;
       "on-click" = "systemctl reboot";
       "tooltip" = false;
