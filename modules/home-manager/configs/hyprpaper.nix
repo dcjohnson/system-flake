@@ -4,12 +4,13 @@
   splash_offset = 2.0;
 
   preload = [
-    "/home/dcj/.config/wallpapers/seagull.jpg"
-    "/home/dcj/.config/wallpapers/nixos.png"
-    "/home/dcj/.config/wallpapers/big-sur-sunset.jpg"
+    "/home/djohnson/.config/wallpapers/seagull.jpg"
+    "/home/djohnson/.config/wallpapers/nixos.png"
+    "/home/djohnson/.config/wallpapers/big-sur-sunset.jpg"
   ];
 
   wallpaper = [
-    ",/home/dcj/.config/wallpapers/big-sur-sunset.jpg"
+    "HDMI-A-2,/home/djohnson/.config/wallpapers/nixos.png"
+    "DP-5,/home/djohnson/.config/wallpapers/nixos.png"
   ];
 }

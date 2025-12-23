@@ -1,5 +1,5 @@
 {
-  monitor = ",preferred,auto,auto";
+  monitor = ",preferred, auto, auto";
 
   "$terminal" = "kitty";
   "$fileManager" = "nautilus";
@@ -196,6 +196,7 @@
   bind = [
     "$mainMod, Q, exec, $terminal"
     "$mainMod, C, killactive,"
+    "$mainMod, S, exec, slack"
     "$mainMod, M, exit,"
     "$mainMod, B, exec, $browser"
     "$mainMod, E, exec, $fileManager"

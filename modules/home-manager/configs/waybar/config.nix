@@ -12,9 +12,8 @@
       "custom/logout"
       "custom/poweroff"
       "custom/reboot"
-      "hyprland/window"
     ];
-    "modules-center" = [ ];
+    "modules-center" = [ "hyprland/window" ];
     "modules-right" = [
       #"idle_inhibitor"
       #"temperature"
@@ -31,12 +30,9 @@
     ];
     "hyprland/workspaces" = {
       format = "{icon}";
-      format-icons = {
-        active = "";
-        default = "";
-      };
-      "icon-size" = 10;
-      "sort-by-number" = true;
+      format-icons = { };
+      icon-size = 10;
+      sort-by-number = true;
     };
     "hyprland/window" = {
       "format" = "{class}";
@@ -51,7 +47,7 @@
     "custom/logout" = {
       "format" = "";
       "icon-size" = 10;
-      "on-click" = "kill -9 -1";
+      "on-click" = "kill -15 -1"; # try sigterm for now
       "tooltip" = false;
     };
     "custom/poweroff" = {
@@ -106,18 +102,6 @@
     };
     "memory" = {
       "format" = "  {}%";
-    };
-    "temperature" = {
-      "thermal-zone" = 2;
-      "hwmon-path" = "/sys/class/hwmon/hwmon2/temp1_input";
-      "critical-threshold" = 176;
-      "format-critical" = "{icon} {temperatureF}°F";
-      "format" = "{icon} {temperatureF}°F";
-      "format-icons" = [
-        #""
-        ""
-        #""
-      ];
     };
     "backlight" = {
       "format" = "{icon} {percent}%";

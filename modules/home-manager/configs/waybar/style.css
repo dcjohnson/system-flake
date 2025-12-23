@@ -18,17 +18,50 @@ tooltip label {
   color: white;
 }
 
-#workspaces button {
-  padding: 0 0px; 
-  background: transparent; 
-  color: black;
-  border-bottom: 0px solid transparent;
+#workspaces {
+  box-shadow: none;
+  text-shadow: none;
+  transition: none;
+  background: transparent;
+  padding: 0 0px;
+  margin: 0 0 0 0px;
 }
 
-#workspaces button.focused {
-  background: #64727d;
-  border-bottom: 0px solid white;
-} 
+#custom-logout, 
+#custom-launcher, 
+#custom-files, 
+#custom-lockscreen,
+#custom-poweroff,
+#custom-reboot ,
+#workspaces button {
+  box-shadow: none;
+  text-shadow: none;
+  transition: none;
+  background: transparent;
+  border-radius: 0 0 0 0px;
+  border: 0px;
+  padding: 4 4px; 
+  background: transparent; 
+  color: black;
+  margin: 0 0 0 0px;
+}
+
+#custom-logout:hover,
+#custom-launcher:hover, 
+#custom-files:hover, 
+#custom-lockscreen:hover,
+#custom-poweroff:hover,
+#custom-reboot:hover,
+#workspaces button:hover, #workspaces button.active {
+  box-shadow: none;
+  text-shadow: none;
+  transition: none;
+  background: transparent;
+  padding: 2 2px;
+  border-radius: 0 0 0 0px;
+  border: 2px solid black;
+  margin: 0 0 0 0px;
+}
 
 #mode,
 #clock,
@@ -61,14 +94,6 @@ tooltip label {
   padding-left: 4px;
   padding-right: 4px;
   color: #000000;
-}
-
-.modules-left > widget:first-child > #workspaces {
-  margin-left: 0;
-}
-
-.modules-right > widget:last-child > #workspaces {
-  margin-right: 0;
 }
 
 #clock { }
