@@ -47,7 +47,7 @@
     "custom/logout" = {
       "format" = "";
       "icon-size" = 10;
-      "on-click" = "kill -15 -1"; # try sigterm for now
+      "on-click" = "kill -9 -1"; # try sigterm for now
       "tooltip" = false;
     };
     "custom/poweroff" = {
