@@ -15,14 +15,11 @@
     ];
     "modules-center" = [ "hyprland/window" ];
     "modules-right" = [
-      #"idle_inhibitor"
-      #"temperature"
+      "pulseaudio"
+      "pulseaudio/slider"
       "cpu"
       "memory"
       "network"
-      "pulseaudio"
-      #"backlight"
-      #"keyboard-state"
       "battery"
       "battery#bat2"
       "tray"
@@ -145,6 +142,11 @@
       "format-disconnected" = "Disconnected ⚠ {ifname}";
       "format-alt" = " {ifname}: {ipaddr}/{cidr}";
     };
+    "pulseaudio/slider" = {
+      min = 0;
+      max = 100;
+      orientation = "horizontal";
+    };
     "pulseaudio" = {
       "scroll-step" = 5;
       "format" = "{icon}  {volume}% {format_source}";
@@ -161,7 +163,6 @@
         ];
       };
       "on-click" = "pavucontrol";
-      #"on-click-right" = "foot -a pw-top pw-top";
     };
   };
 }
