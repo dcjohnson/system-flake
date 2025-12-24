@@ -28,7 +28,6 @@
   boot.supportedFilesystems = [ "zfs" ];
 
   boot.zfs = {
-    enabled = true;
     forceImportRoot = false;
     forceImportAll = false;
     devNodes = "/dev/disk/by-id";

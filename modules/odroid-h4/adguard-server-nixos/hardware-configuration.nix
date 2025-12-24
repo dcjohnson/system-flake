@@ -30,7 +30,6 @@
     extraModulePackages = [ ];
     supportedFilesystems = [ ];
     zfs = {
-      enabled = true;
       devNodes = "/dev/disk/by-id";
       extraPools = [ "zfsBackup" ];
     };
