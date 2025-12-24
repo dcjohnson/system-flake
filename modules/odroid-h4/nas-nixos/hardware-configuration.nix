@@ -35,8 +35,18 @@
   };
   # Enable networking
   networking = {
-    # interfaces.enp1s0.useDHCP = lib.mkDefault true;
-    # interfaces.enp2s0.useDHCP = lib.mkDefault true;
+    interfaces.enp1s0.useDHCP = lib.mkDefault true;
+    interfaces.enp2s0 = {
+      useDHCP = lib.mkDefault false;
+      ipv4 = {
+        addresses = [
+          {
+            address = "192.168.200.2";
+            prefixLength = 24;
+          }
+        ];
+      };
+    };
 
     # Configure network proxy if necessary
     # proxy.default = "http://user:password@proxy:port/";
