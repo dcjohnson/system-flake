@@ -29,16 +29,34 @@
 
   # Enable networking
   networking = {
-    firewall.allowedTCPPorts = [
-      3000
-      80
-      53
-      22
-    ];
+    interfaces = {
+      enp1s0 = {
+        useDHCP = lib.mkDefault false;
+        ipv4 = {
+          addresses = [
+            {
+              # Maintenance port to connect the NAS to the Adguard server which has the backup.
+              address = "192.168.200.3";
+              prefixLength = 24;
+            }
+          ];
+        };
+      };
+      enp2s0 = lib.mkDefault true;
+    };
 
-    firewall.allowedUDPPorts = [
-      53
-    ];
+    firewall = {
+      allowedTCPPorts = [
+        3000
+        80
+        53
+        22
+      ];
+
+      allowedUDPPorts = [
+        53
+      ];
+    };
 
     useDHCP = lib.mkDefault true;
     networkmanager.enable = true;
