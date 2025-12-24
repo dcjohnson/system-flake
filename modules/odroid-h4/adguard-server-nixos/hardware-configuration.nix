@@ -28,7 +28,6 @@
     supportedFilesystems = [ "zfs" ];
     kernelModules = [ "kvm-intel" ];
     extraModulePackages = [ ];
-    supportedFilesystems = [ ];
     zfs = {
       devNodes = "/dev/disk/by-id";
       extraPools = [ "zfsBackup" ];
