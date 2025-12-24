@@ -57,11 +57,6 @@
       enable = false;
     };
 
-    services.zfs = {
-      autoScrub.enable = true;
-      autoSnapshot.enable = true;
-    };
-
     # Configure keymap in X11
     services.xserver.xkb = {
       layout = "us";
@@ -89,7 +84,6 @@
       wget
       curl
       iproute2
-      zfs
     ];
 
     # Some programs need SUID wrappers, can be configured further or are

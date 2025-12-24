@@ -25,13 +25,9 @@
       ];
       kernelModules = [ ];
     };
-    supportedFilesystems = [ "zfs" ];
+    supportedFilesystems = [ ];
     kernelModules = [ "kvm-intel" ];
     extraModulePackages = [ ];
-    zfs = {
-      devNodes = "/dev/disk/by-id";
-      extraPools = [ "zfsBackup" ];
-    };
   };
   # Enable networking
   networking = {

@@ -3,6 +3,23 @@
   config = {
     disko.devices = {
       disk = {
+        sda = {
+          type = "disk";
+          device = "/dev/sda";
+          content = {
+            type = "gpt";
+            partitions = {
+              sda1 = {
+                size = "100%";
+                content = {
+                  type = "filesystem";
+                  format = "ext4";
+                  mountpoint = "/mnt/nas_backup";
+                };
+              };
+            };
+          };
+        };
         nvme0n1 = {
           type = "disk";
           device = "/dev/nvme0n1";
