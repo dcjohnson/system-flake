@@ -27,18 +27,19 @@
     time.timeZone = "America/Los_Angeles";
 
     # Select internationalisation properties.
-    i18n.defaultLocale = "en_US.UTF-8";
-
-    i18n.extraLocaleSettings = {
-      LC_ADDRESS = "en_US.UTF-8";
-      LC_IDENTIFICATION = "en_US.UTF-8";
-      LC_MEASUREMENT = "en_US.UTF-8";
-      LC_MONETARY = "en_US.UTF-8";
-      LC_NAME = "en_US.UTF-8";
-      LC_NUMERIC = "en_US.UTF-8";
-      LC_PAPER = "en_US.UTF-8";
-      LC_TELEPHONE = "en_US.UTF-8";
-      LC_TIME = "en_US.UTF-8";
+    i18n = {
+      defaultLocale = "en_US.UTF-8";
+      extraLocaleSettings = {
+        LC_ADDRESS = "en_US.UTF-8";
+        LC_IDENTIFICATION = "en_US.UTF-8";
+        LC_MEASUREMENT = "en_US.UTF-8";
+        LC_MONETARY = "en_US.UTF-8";
+        LC_NAME = "en_US.UTF-8";
+        LC_NUMERIC = "en_US.UTF-8";
+        LC_PAPER = "en_US.UTF-8";
+        LC_TELEPHONE = "en_US.UTF-8";
+        LC_TIME = "en_US.UTF-8";
+      };
     };
 
     # Enable the X11 windowing system.
@@ -46,6 +47,19 @@
 
     services.adguardhome = {
       enable = true;
+    };
+
+    services.rsyncd = {
+      enable = true;
+    };
+
+    services.rsync = {
+      enable = false;
+    };
+
+    services.zfs = {
+      autoScrub.enable = true;
+      autoSnapshot.enable = true;
     };
 
     # Configure keymap in X11
@@ -75,6 +89,7 @@
       wget
       curl
       iproute2
+      zfs
     ];
 
     # Some programs need SUID wrappers, can be configured further or are

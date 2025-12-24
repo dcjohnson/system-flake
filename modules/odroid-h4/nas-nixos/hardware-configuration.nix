@@ -28,8 +28,9 @@
   boot.supportedFilesystems = [ "zfs" ];
 
   boot.zfs = {
-    forceImportRoot = true;
-    forceImportAll = true;
+    enabled = true;
+    forceImportRoot = false;
+    forceImportAll = false;
     devNodes = "/dev/disk/by-id";
     extraPools = [ "zroot" ];
   };
@@ -56,8 +57,9 @@
     # proxy.noProxy = "127.0.0.1,localhost,internal.domain";
     firewall = {
       allowedTCPPorts = [
-        22
-        2049
+        22 # ssh
+        873 # rsync
+        2049 # need to figure this one out
       ];
     };
     useDHCP = lib.mkDefault true;
