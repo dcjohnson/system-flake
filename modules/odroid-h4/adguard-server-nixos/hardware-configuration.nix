@@ -42,7 +42,9 @@
           ];
         };
       };
-      enp2s0 = lib.mkDefault true;
+      enp2s0 = {
+        useDHCP = lib.mkDefault true;
+      };
     };
 
     firewall = {
