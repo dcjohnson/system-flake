@@ -16,7 +16,6 @@
     "modules-center" = [ "hyprland/window" ];
     "modules-right" = [
       "pulseaudio"
-      "pulseaudio/slider"
       "cpu"
       "memory"
       "network"
@@ -142,23 +141,13 @@
       "format-disconnected" = "Disconnected ⚠ {ifname}";
       "format-alt" = " {ifname}: {ipaddr}/{cidr}";
     };
-    "pulseaudio/slider" = {
-      min = 0;
-      max = 100;
-      orientation = "horizontal";
-    };
     "pulseaudio" = {
-      "scroll-step" = 5;
-      "format" = "{icon}  {volume}% {format_source}";
-      "format-bluetooth" = " {icon} {volume}% {format_source}";
-      "format-bluetooth-muted" = "  {icon} {format_source}";
-      "format-muted" = " {format_source}";
-      "format-source" = " {volume}%";
-      "format-source-muted" = "";
+      "format" = "{icon}";
+      "format-bluetooth" = " {icon}";
+      "format-bluetooth-muted" = "  {icon}";
+      "format-muted" = "";
       "format-icons" = {
         "default" = [
-          ""
-          ""
           ""
         ];
       };
