@@ -66,6 +66,9 @@
       pavucontrol
       playerctl
       pasystray
+      pipewire
+      pulseaudio-ctl
+      pulseaudio
       blueman
       bluez
       bluez-alsa

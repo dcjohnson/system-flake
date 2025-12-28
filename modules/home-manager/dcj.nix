@@ -46,6 +46,9 @@
     pasystray = {
       enable = false;
     };
+    blueman-applet = {
+      enable = true;
+    };
     hypridle = {
       enable = true;
       settings = import ./configs/hypridle.nix;
