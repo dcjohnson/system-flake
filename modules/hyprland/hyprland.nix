@@ -5,10 +5,12 @@
       defaultSession = "hyprland-uwsm";
 
       sddm = {
-        theme = "${pkgs.sddm-astronaut}/share/sddm/themes/sddm-astronaut-theme";
-        extraPackages = [ pkgs.sddm-astronaut ];
+        theme = "${pkgs.catppuccin-sddm}/share/sddm/themes/catppuccin-mocha-mauve";
+        extraPackages = [ pkgs.catppuccin-sddm ];
         enable = true;
-        wayland.enable = true;
+        wayland = {
+          enable = true;
+        };
       };
     };
 
@@ -51,6 +53,7 @@
       brightnessctl
       networkmanagerapplet
       yazi
+      catppuccin-sddm
       waybar
       hypridle
       hyprlock
