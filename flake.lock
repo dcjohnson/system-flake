@@ -103,8 +103,7 @@
         "naersk": "naersk",
         "nixpkgs": "nixpkgs",
         "rose-pine-hyprcursor": "rose-pine-hyprcursor",
-        "schwab-auto-trader": "schwab-auto-trader",
-        "silentSDDM": "silentSDDM"
+        "schwab-auto-trader": "schwab-auto-trader"
       }
     },
     "rose-pine-hyprcursor": {
@@ -143,26 +142,6 @@
         "owner": "dcjohnson",
         "ref": "main",
         "repo": "schwab-auto-trader",
-        "type": "github"
-      }
-    },
-    "silentSDDM": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1766951244,
-        "narHash": "sha256-znjp0gAxt+1wkxp/rqc0NPAnQGikbCAylgWGussZj0I=",
-        "owner": "uiriansan",
-        "repo": "SilentSDDM",
-        "rev": "3705a132db1e101a5ec2aa14b0e28e8ccd78866a",
-        "type": "github"
-      },
-      "original": {
-        "owner": "uiriansan",
-        "repo": "SilentSDDM",
         "type": "github"
       }
     },
