@@ -15,6 +15,12 @@
         wayland = {
           enable = true;
         };
+        settings = {
+          Theme = {
+            EnableAvatars = false;
+            DisableAvatarsThreshold = 1;
+	  };
+        };
       };
     };
 
@@ -22,7 +28,6 @@
       silentSDDM = {
         enable = true;
         theme = "everforest";
-        # settings = { };
       };
 
       hyprlock = {
