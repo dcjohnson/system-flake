@@ -1,9 +1,11 @@
 {
+  inputs,
   config,
   pkgs,
   ...
 }:
 {
+  imports = [ inputs.silentSDDM.nixosModules.default ];
   config = {
     services.displayManager = {
       defaultSession = "hyprland-uwsm";
@@ -17,6 +19,12 @@
     };
 
     programs = {
+      silentSDDM = {
+        enable = true;
+        theme = "everforest";
+        # settings = { };
+      };
+
       hyprlock = {
         enable = true;
       };
@@ -56,6 +64,9 @@
       networkmanagerapplet
       yazi
       waybar
+      kdePackages.qtmultimedia
+      kdePackages.qtvirtualkeyboard
+      kdePackages.qtsvg
       hypridle
       hyprlock
       hyprlauncher

@@ -166,32 +166,10 @@
 
         lenovo-thinkpad-t470 = nixpkgs.lib.nixosSystem {
           pkgs = dpkgs;
+          specialArgs = {
+            inherit inputs;
+          };
           modules = [
-            (
-              (
-                { inputs }:
-                { config, pkgs, ... }:
-                {
-                  imports = [ inputs.silentSDDM.nixosModules.default ];
-                  config = {
-                    environment.systemPackages = [
-                      pkgs.kdePackages.qtmultimedia
-                      pkgs.kdePackages.qtvirtualkeyboard
-                      pkgs.kdePackages.qtsvg
-                    ];
-                    programs = {
-                      silentSDDM = {
-                        enable = true;
-                        theme = "everforest";
-                        # settings = { };
-                      };
-                    };
-                  };
-                }
-              )
-              { inherit inputs; }
-            )
-
             ./modules/lenovo-thinkpad-t470/default.nix
           ];
         };
