@@ -19,6 +19,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    silentSDDM = {
+      url = "github:uiriansan/SilentSDDM";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager?ref=release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -33,6 +38,7 @@
       disko,
       naersk,
       rose-pine-hyprcursor,
+      silentSDDM,
       home-manager,
       ...
     }@inputs:
@@ -161,6 +167,31 @@
         lenovo-thinkpad-t470 = nixpkgs.lib.nixosSystem {
           pkgs = dpkgs;
           modules = [
+            (
+              (
+                { inputs }:
+                { config, pkgs, ... }:
+                {
+                  imports = [ inputs.silentSDDM.nixosModules.default ];
+                  config = {
+                    environment.systemPackages = [
+                      pkgs.kdePackages.qtmultimedia
+                      pkgs.kdePackages.qtvirtualkeyboard
+                      pkgs.kdePackages.qtsvg
+                    ];
+                    programs = {
+                      silentSDDM = {
+                        enable = true;
+                        theme = "catppuccin-latte";
+                        # settings = { };
+                      };
+                    };
+                  };
+                }
+              )
+              { inherit inputs; }
+            )
+
             ./modules/lenovo-thinkpad-t470/default.nix
           ];
         };

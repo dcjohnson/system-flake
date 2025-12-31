@@ -1,12 +1,14 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  ...
+}:
 {
   config = {
     services.displayManager = {
       defaultSession = "hyprland-uwsm";
 
       sddm = {
-        theme = "${pkgs.catppuccin-sddm}/share/sddm/themes/catppuccin-mocha-mauve"; # should just be ".../chili" for sddm chili theme
-        extraPackages = [ pkgs.catppuccin-sddm ];
         enable = true;
         wayland = {
           enable = true;
@@ -53,7 +55,6 @@
       brightnessctl
       networkmanagerapplet
       yazi
-      catppuccin-sddm
       waybar
       hypridle
       hyprlock
