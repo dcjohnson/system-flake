@@ -40,7 +40,7 @@ let
       # Background displayed before the actual background is loaded.
       # Use only if the background is a video, otherwise leave blank.
       # Connected with: Background.
-      Background = ../home-manager/wallpapers/nixos.png; # "Backgrounds/astronaut.png";
+      Background = builtins.path { path = ../home-manager/wallpapers/nixos.png; }; # "Backgrounds/astronaut.png";
       # Must be a relative path.
       # Supports: png, jpg, jpeg, webp, gif, avi, mp4, mov, mkv, m4v, webm.
       BackgroundSpeed = "";
