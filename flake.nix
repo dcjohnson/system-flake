@@ -159,6 +159,9 @@
 
         system76-thelio-inspired = nixpkgs.lib.nixosSystem {
           pkgs = dpkgs;
+          specialArgs = {
+            inherit inputs;
+          };
           modules = [
             ./modules/system76-thelio-inspired/configuration.nix
           ];
