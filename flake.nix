@@ -182,7 +182,7 @@
                     programs = {
                       silentSDDM = {
                         enable = true;
-                        theme = "catppuccin-latte";
+                        theme = "everforest";
                         # settings = { };
                       };
                     };
