@@ -16,8 +16,6 @@
         };
         theme = "${pkgs.flake-packages.custom-sddm-astro-mountain_night_sky}/share/sddm/themes/sddm-astronaut-theme";
         extraPackages = [ pkgs.flake-packages.custom-sddm-astro-mountain_night_sky ];
-        #theme = "${pkgs.flake-packages.custom-sddm-astro-mountains}/share/sddm/themes/sddm-astronaut-theme";
-        #extraPackages = [ pkgs.flake-packages.custom-sddm-astro-mountains ];
       };
     };
 
