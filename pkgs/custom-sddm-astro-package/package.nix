@@ -34,7 +34,7 @@ pkgs.sddm-astronaut.override {
     # Background displayed before the actual background is loaded.
     # Use only if the background is a video, otherwise leave blank.
     # Connected with: Background.
-    Background = builtins.path { path = walpaperFile; };
+    Background = builtins.path { path = wallpaperFile; };
     # Must be a relative path.
     # Supports: png, jpg, jpeg, webp, gif, avi, mp4, mov, mkv, m4v, webm.
     BackgroundSpeed = "";
