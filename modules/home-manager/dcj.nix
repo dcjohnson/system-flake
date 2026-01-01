@@ -8,7 +8,7 @@
       "wallpapers" = {
         enable = true;
         target = "./.config/wallpapers";
-        source = ./wallpapers;
+        source = ../../wallpapers;
         recursive = true;
       };
     };
