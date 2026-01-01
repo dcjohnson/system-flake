@@ -65,6 +65,7 @@
       gparted
       minicom
       kitty
+      gimp2-with-plugins
       xnconvert
       git
       chromium

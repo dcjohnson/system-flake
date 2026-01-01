@@ -163,6 +163,7 @@
     openssl
     ntfs3g
     bftpd
+    gimp2-with-plugins
     xnconvert
     parted
     vlc
