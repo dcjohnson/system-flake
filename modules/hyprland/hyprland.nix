@@ -6,19 +6,6 @@
 }:
 {
   config = {
-    services.displayManager = {
-      defaultSession = "hyprland-uwsm";
-
-      sddm = {
-        enable = true;
-        wayland = {
-          enable = true;
-        };
-        theme = "${pkgs.flake-packages.custom-sddm-astro-mountain_night_sky}/share/sddm/themes/sddm-astronaut-theme";
-        extraPackages = [ pkgs.flake-packages.custom-sddm-astro-mountain_night_sky ];
-      };
-    };
-
     programs = {
       hyprlock = {
         enable = true;
@@ -32,18 +19,39 @@
       };
     };
 
-    services.blueman.enable = true;
-    services.playerctld.enable = true;
+    services = {
+      displayManager = {
+        defaultSession = "hyprland-uwsm";
 
-    services.pulseaudio.enable = false;
-    services.avahi.enable = true;
-    services.pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
+        sddm = {
+          enable = true;
+          wayland = {
+            enable = true;
+          };
+          theme = "${pkgs.flake-packages.custom-sddm-astro-mountain_night_sky}/share/sddm/themes/sddm-astronaut-theme";
+          extraPackages = [ pkgs.flake-packages.custom-sddm-astro-mountain_night_sky ];
+        };
+      };
+
+      blueman = {
+        enable = true;
+      };
+      playerctld = {
+        enable = true;
+      };
+      pulseaudio = {
+        enable = false;
+      };
+      avahi = {
+        enable = true;
+      };
+      pipewire = {
+        enable = true;
+        alsa.enable = true;
+        alsa.support32Bit = true;
+        pulse.enable = true;
+      };
     };
-
     # Install firefox.
     programs = {
       chromium.enable = true;
