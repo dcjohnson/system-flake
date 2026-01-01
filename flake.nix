@@ -47,17 +47,15 @@
         hostPlatform = system;
         overlays = [
           (final: prev: {
-            djohnson-packages = {
-              installers = import ./pkgs/packages.nix {
-                pkgs = final;
-              };
+            flake-packages = import ./pkgs/packages.nix {
+              pkgs = final;
+            };
+            external-packages = {
               schwab-auto-trader = final.callPackage "${inputs.schwab-auto-trader}/package.nix" {
                 pkgs = final;
                 inherit naersk;
                 src = inputs.schwab-auto-trader;
               };
-            };
-            external-3rd-party-packages = {
               rose-pine-hyprcursor = rose-pine-hyprcursor.packages.${system}.default;
             };
           })

@@ -16,6 +16,11 @@ let
     };
 in
 {
+  custom-sddm-astro-mountains = import ./custom-sddm-astro-package/package.nix {
+    inherit pkgs;
+    wallpaperFile = ../wallpapers/a_mountain_range_with_snow_on_top.jpeg;
+  };
+
   odroid-h4-plus-nas-installer = installerScriptPackage {
     name = "odroid-h4-plus-nas-installer";
     inherit pkgs;
