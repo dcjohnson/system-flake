@@ -14,8 +14,8 @@
         wayland = {
           enable = true;
         };
-        theme = "${pkgs.flake-packages.custom-sddm-astro-mountain}/share/sddm/themes/sddm-astronaut-theme";
-        extraPackages = [ pkgs.flake-packages.custom-sddm-astro-mountain ];
+        theme = "${pkgs.flake-packages.custom-sddm-astro-mountains}/share/sddm/themes/sddm-astronaut-theme";
+        extraPackages = [ pkgs.flake-packages.custom-sddm-astro-mountains ];
       };
     };
 
