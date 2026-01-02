@@ -1,5 +1,19 @@
 # system-flake
+
 My System Flake
+
+# Delete old generations 
+
+```bash
+# To list generations
+nix-env --profile /nix/var/nix/profiles/system --list-generations
+
+# To keep just your current generation and the two older than it:
+nix-env --profile … --delete-generations +3
+
+# To remove all but your current generation:
+nix-env --profile … --delete-generations old
+```
 
 # Build iso 
 
