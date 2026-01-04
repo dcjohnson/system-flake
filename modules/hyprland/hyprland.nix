@@ -74,6 +74,7 @@
       brightnessctl
       networkmanagerapplet
       yazi
+      evince
       system-config-printer
       waybar
       kdePackages.qtmultimedia
