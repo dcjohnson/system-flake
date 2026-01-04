@@ -29,7 +29,19 @@
       LC_TELEPHONE = "en_US.UTF-8";
       LC_TIME = "en_US.UTF-8";
     };
+    services.avahi = {
+      enable = true;
+      nssmdns4 = true;
+      openFirewall = true;
+    };
 
+    services.printing = {
+      enable = true;
+      drivers = with pkgs; [
+        cups-filters
+        cups-browsed
+      ];
+    };
     services.rpcbind.enable = true;
 
     # Configure keymap in X11
@@ -37,8 +49,6 @@
       layout = "us";
       variant = "";
     };
-    # Enable CUPS to print documents.
-    services.printing.enable = true;
 
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users.users.dcj = {
