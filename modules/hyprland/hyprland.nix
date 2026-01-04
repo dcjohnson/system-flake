@@ -20,6 +20,9 @@
     };
 
     services = {
+      system-config-printer = {
+        enable = true;
+      };
       displayManager = {
         defaultSession = "hyprland-uwsm";
 
@@ -54,7 +57,12 @@
     };
     # Install firefox.
     programs = {
-      chromium.enable = true;
+      chromium = {
+        enable = true;
+      };
+      system-config-printer = {
+        enable = true;
+      };
     };
 
     environment.systemPackages = with pkgs; [
@@ -66,6 +74,7 @@
       brightnessctl
       networkmanagerapplet
       yazi
+      system-config-printer
       waybar
       kdePackages.qtmultimedia
       kdePackages.qtvirtualkeyboard
