@@ -5,6 +5,7 @@
   "$fileManager" = "nautilus";
   "$menu" = "hyprlauncher";
   "$browser" = "chromium";
+  "$lockScreen" = "loginctl lock-session";
 
   # exec-once = $terminal
   # exec-once = nm-applet &
@@ -47,7 +48,7 @@
   # https://wiki.hypr.land/Configuring/Variables/#general
   general = {
     gaps_in = 5;
-    gaps_out = 20;
+    gaps_out = 5;
 
     border_size = 2;
 
@@ -59,7 +60,7 @@
     resize_on_border = false;
 
     # Please see https://wiki.hypr.land/Configuring/Tearing/ before you turn this on
-    allow_tearing = false;
+    allow_tearing = true;
 
     layout = "dwindle";
   };
@@ -194,6 +195,7 @@
 
   # Example binds, see https://wiki.hypr.land/Configuring/Binds/ for more
   bind = [
+    "$mainMod, L, exec, $lockScreen"
     "$mainMod, Q, exec, $terminal"
     "$mainMod, C, killactive,"
     "$mainMod, S, exec, slack"
