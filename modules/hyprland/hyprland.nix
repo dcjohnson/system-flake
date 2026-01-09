@@ -73,6 +73,7 @@
       alsa-utils
       brightnessctl
       networkmanagerapplet
+      python3Minimal
       yazi
       evince
       system-config-printer
