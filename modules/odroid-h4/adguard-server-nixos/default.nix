@@ -54,7 +54,27 @@
     };
 
     services.rsync = {
-      enable = false;
+      enable = true;
+      jobs = {
+        nasBackup = {
+          user = "adguard";
+          group = "adguard";
+          timerConfig = {
+            OnCalendar = "daily";
+            Persistent = true;
+          };
+          sources = [
+            "nasguest@192.168.200.2::nas"
+          ];
+          settings = {
+            archive = true;
+            delete = true;
+            mkpath = true;
+            verbose = true;
+          };
+          destination = "/mnt/nas_backup/nas_backup";
+        };
+      };
     };
 
     # Configure keymap in X11
