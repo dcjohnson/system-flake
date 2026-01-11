@@ -55,7 +55,7 @@
         sections = {
           nasConfigs = {
             comment = "nas configs";
-            path = "/mnt/nas/configs";
+            path = "/mnt/nas";
           };
         };
       };
