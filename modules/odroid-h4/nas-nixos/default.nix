@@ -44,6 +44,21 @@
 
     services.rsyncd = {
       enable = true;
+      settings = {
+        globalSection = {
+          address = "192.168.200.2";
+          gid = "nas";
+          "max connections" = 4;
+          uid = "nasguest";
+          "use chroot" = true;
+        };
+        sections = {
+          nasConfigs = {
+            comment = "nas configs";
+            path = "/mnt/nas/configs";
+          };
+        };
+      };
     };
 
     # for nfs
