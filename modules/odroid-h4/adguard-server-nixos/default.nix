@@ -58,7 +58,7 @@
       jobs = {
         nasBackup = {
           user = "adguard";
-          group = "adguard";
+          group = "users";
           timerConfig = {
             OnCalendar = "daily";
             Persistent = true;
