@@ -53,7 +53,7 @@
           "use chroot" = true;
         };
         sections = {
-          nasConfigs = {
+          nas = {
             comment = "nas configs";
             path = "/mnt/nas";
           };
