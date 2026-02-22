@@ -74,6 +74,7 @@
       neovim
       gparted
       minicom
+      xnconvert
       kitty
       gimp2-with-plugins
       git
