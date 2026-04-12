@@ -73,7 +73,7 @@
       alsa-utils
       brightnessctl
       networkmanagerapplet
-      (python315.withPackages (python-pkgs: with python-pkgs: []))
+      (python315.withPackages (python-pkgs: with python-pkgs; [ ]))
       yazi
       evince
       system-config-printer
