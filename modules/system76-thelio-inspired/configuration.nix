@@ -183,7 +183,6 @@
     jq
     zip
     unzip
-    python3Minimal
     exiftool
 
     # gaming stuff
