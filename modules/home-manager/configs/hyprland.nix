@@ -198,7 +198,6 @@
     "$mainMod, L, exec, $lockScreen"
     "$mainMod, Q, exec, $terminal"
     "$mainMod, C, killactive,"
-    "$mainMod, S, exec, slack"
     "$mainMod, M, exit,"
     "$mainMod, B, exec, $browser"
     "$mainMod, E, exec, $fileManager"

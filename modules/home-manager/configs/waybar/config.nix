@@ -7,6 +7,7 @@
     "modules-left" = [
       "hyprland/workspaces"
       "custom/launcher"
+      "custom/screenshot"
       "custom/files"
       "custom/lockscreen"
       "custom/logout"
@@ -33,6 +34,12 @@
     "hyprland/window" = {
       "format" = "{class}";
       "max-length" = 20;
+    };
+    "custom/screenshot" = {
+      format = "";
+      icon-size = 10;
+      on-click = "grim -g \"$(slurp)\"";
+      tooltip = false;
     };
     "custom/lockscreen" = {
       "format" = "";

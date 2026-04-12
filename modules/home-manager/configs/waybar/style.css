@@ -28,6 +28,7 @@ tooltip label {
 }
 
 #custom-logout, 
+#custom-screenshot,
 #custom-launcher, 
 #custom-files, 
 #custom-lockscreen,
@@ -47,6 +48,7 @@ tooltip label {
 }
 
 #custom-logout:hover,
+#custom-screenshot:hover,
 #custom-launcher:hover, 
 #custom-files:hover, 
 #custom-lockscreen:hover,

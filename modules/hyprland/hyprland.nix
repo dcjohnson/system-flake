@@ -73,7 +73,7 @@
       alsa-utils
       brightnessctl
       networkmanagerapplet
-      python3Minimal
+      (python315.withPackages (python-pkgs: with python-pkgs: []))
       yazi
       evince
       system-config-printer
@@ -101,6 +101,8 @@
       bluez-alsa
       bluez-tools
       bluez-headers
+      grim
+      slurp
     ];
     fonts.packages = with pkgs; [
       font-awesome
