@@ -25,10 +25,16 @@
       ];
       kernelModules = [ ];
     };
-    supportedFilesystems = [ ];
     kernelModules = [ "kvm-intel" ];
     extraModulePackages = [ ];
+    supportedFilesystems = [ "nfs" ];
   };
+
+  fileSystems."/mnt/nas" = {
+    device = "nas.homenet:/mnt/nas";
+    fsType = "nfs";
+  };
+
   # Enable networking
   networking = {
     interfaces = {

@@ -46,6 +46,19 @@
     services.displayManager.gdm.enable = false;
     services.desktopManager.gnome.enable = false;
 
+    security = {
+      wrappers = {
+        "mount.nfs" = {
+          setuid = true;
+          owner = "root";
+          group = "root";
+          source = "${pkgs.nfs-utils}/bin/mount.nfs";
+        };
+      };
+      rtkit = {
+        enable = true;
+      };
+    };
     # Configure keymap in X11
     services.xserver.xkb = {
       layout = "us";
@@ -74,6 +87,7 @@
       curl
       iproute2
       net-tools
+      nfs-utils
       mpv
     ];
 
