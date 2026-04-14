@@ -96,10 +96,7 @@
       autoSnapshot.enable = true;
     };
 
-    # Enable the X11 windowing system.
     services.xserver.enable = false;
-
-    # Enable the GNOME Desktop Environment.
     services.displayManager.gdm.enable = false;
     services.desktopManager.gnome.enable = false;
 

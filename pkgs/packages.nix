@@ -41,7 +41,7 @@ in
     inherit pkgs;
   };
 
-  odroid-h4-ultra-mpv-installer = insetallerScriptPackage {
+  odroid-h4-ultra-mpv-installer = installerScriptPackage {
     name = "odroid-h4-ultra-mpv-installer";
     inherit pkgs;
   };

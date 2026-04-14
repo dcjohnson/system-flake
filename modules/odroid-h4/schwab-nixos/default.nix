@@ -41,12 +41,9 @@
       LC_TIME = "en_US.UTF-8";
     };
 
-    # Enable the X11 windowing system.
     services.xserver.enable = false;
-
-    # Enable the GNOME Desktop Environment.
-    services.xserver.displayManager.gdm.enable = false;
-    services.xserver.desktopManager.gnome.enable = false;
+    services.displayManager.gdm.enable = false;
+    services.desktopManager.gnome.enable = false;
 
     # Configure keymap in X11
     services.xserver.xkb = {

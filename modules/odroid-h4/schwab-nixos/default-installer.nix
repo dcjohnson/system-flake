@@ -43,12 +43,9 @@
       LC_TIME = "en_US.UTF-8";
     };
 
-    # Enable the X11 windowing system.
     services.xserver.enable = false;
-
-    # Enable the GNOME Desktop Environment.
-    services.xserver.displayManager.gdm.enable = false;
-    services.xserver.desktopManager.gnome.enable = false;
+    services.displayManager.gdm.enable = false;
+    services.desktopManager.gnome.enable = false;
 
     # Configure keymap in X11
     services.xserver.xkb = {
@@ -75,7 +72,7 @@
     # $ nix search wget
     environment.systemPackages = with pkgs; [
       neovim
-      djohnson-packages.installers.odroid-h4-ultra-schwab-installer
+      flake-packages.installers.odroid-h4-ultra-schwab-installer
     ];
 
     # Some programs need SUID wrappers, can be configured further or are

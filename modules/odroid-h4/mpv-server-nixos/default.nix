@@ -42,8 +42,9 @@
       };
     };
 
-    # Enable the X11 windowing system.
     services.xserver.enable = false;
+    services.displayManager.gdm.enable = false;
+    services.desktopManager.gnome.enable = false;
 
     # Configure keymap in X11
     services.xserver.xkb = {
