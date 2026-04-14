@@ -40,4 +40,9 @@ in
     name = "odroid-h4-ultra-adguard-installer";
     inherit pkgs;
   };
+
+  odroid-h4-ultra-mpv-installer = insetallerScriptPackage {
+    name = "odroid-h4-ultra-mpv-installer";
+    inherit pkgs;
+  };
 }

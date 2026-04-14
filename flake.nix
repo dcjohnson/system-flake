@@ -79,77 +79,84 @@
       };
 
       nixosConfigurations = rec {
-        odroid-h4-nas = odroid-h4.nas-v1.default;
-        odroid-h4-nas-installer = odroid-h4.nas-v1.installer;
-        odroid-h4-schwab = odroid-h4.schwab-v1.default;
-        odroid-h4-schwab-installer = odroid-h4.schwab-v1.installer;
-        odroid-h4-adguard = odroid-h4.adguard-v1.default;
-        odroid-h4-adguard-installer = odroid-h4.adguard-v1.installer;
-
-        odroid-h4 = {
-          adguard-v1 = {
-            default = nixpkgs.lib.nixosSystem {
-              specialArgs = {
-                inherit disko;
-              };
-              pkgs = dpkgs;
-              modules = [
-                ./modules/odroid-h4/adguard-server-nixos/default.nix
-              ];
-            };
-
-            installer = nixpkgs.lib.nixosSystem {
-              specialArgs = {
-                inherit disko;
-              };
-              pkgs = dpkgs;
-              modules = [
-                ./modules/odroid-h4/adguard-server-nixos/default-installer.nix
-              ];
-            };
+        odroid-h4-nas = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit disko;
           };
-          schwab-v1 = {
-            default = nixpkgs.lib.nixosSystem {
-              specialArgs = {
-                inherit disko;
-              };
-              pkgs = dpkgs;
-              modules = [
-                ./modules/odroid-h4/schwab-nixos/default.nix
-              ];
-            };
+          pkgs = dpkgs;
+          modules = [
+            ./modules/odroid-h4/nas-nixos/default.nix
+          ];
+        };
 
-            installer = nixpkgs.lib.nixosSystem {
-              specialArgs = {
-                inherit disko;
-              };
-              pkgs = dpkgs;
-              modules = [
-                ./modules/odroid-h4/schwab-nixos/default-installer.nix
-              ];
-            };
+        odroid-h4-nas-installer = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit disko;
+          };
+          pkgs = dpkgs;
+          modules = [
+            ./modules/odroid-h4/nas-nixos/default-installer.nix
+          ];
+        };
 
+        odroid-h4-schwab = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit disko;
           };
-          nas-v1 = {
-            default = nixpkgs.lib.nixosSystem {
-              specialArgs = {
-                inherit disko;
-              };
-              pkgs = dpkgs;
-              modules = [
-                ./modules/odroid-h4/nas-nixos/default.nix
-              ];
-            };
-            installer = nixpkgs.lib.nixosSystem {
-              specialArgs = {
-                inherit disko;
-              };
-              pkgs = dpkgs;
-              modules = [
-                ./modules/odroid-h4/nas-nixos/default-installer.nix
-              ];
-            };
+          pkgs = dpkgs;
+          modules = [
+            ./modules/odroid-h4/schwab-nixos/default.nix
+          ];
+        };
+
+        odroid-h4-schwab-installer = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit disko;
           };
+          pkgs = dpkgs;
+          modules = [
+            ./modules/odroid-h4/schwab-nixos/default-installer.nix
+          ];
+        };
+
+        odroid-h4-adguard = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit disko;
+          };
+          pkgs = dpkgs;
+          modules = [
+            ./modules/odroid-h4/adguard-server-nixos/default.nix
+          ];
+        };
+
+        odroid-h4-adguard-installer = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit disko;
+          };
+          pkgs = dpkgs;
+          modules = [
+            ./modules/odroid-h4/adguard-server-nixos/default-installer.nix
+          ];
+        };
+
+        odroid-h4-mpv-server = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit disko;
+          };
+          pkgs = dpkgs;
+          modules = [
+            ./modules/odroid-h4/mpv-server-nixos/default.nix
+          ];
+        };
+
+        odroid-h4-mpv-server-installer = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit disko;
+          };
+          pkgs = dpkgs;
+          modules = [
+            ./modules/odroid-h4/mpv-server-nixos/default-installer.nix
+          ];
         };
 
         system76-thelio-inspired = nixpkgs.lib.nixosSystem {
