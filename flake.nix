@@ -141,26 +141,6 @@
           ];
         };
 
-        odroid-h4-mpv-server = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit disko;
-          };
-          pkgs = dpkgs;
-          modules = [
-            ./modules/odroid-h4/mpv-server-nixos/default.nix
-          ];
-        };
-
-        odroid-h4-mpv-server-installer = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit disko;
-          };
-          pkgs = dpkgs;
-          modules = [
-            ./modules/odroid-h4/mpv-server-nixos/default-installer.nix
-          ];
-        };
-
         system76-thelio-inspired = nixpkgs.lib.nixosSystem {
           pkgs = dpkgs;
           specialArgs = {

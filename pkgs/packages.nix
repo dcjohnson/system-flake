@@ -16,11 +16,11 @@ let
     };
 in
 {
-
   custom-sddm-astro-mountain_night_sky = import ./custom-sddm-astro-package/package.nix {
     inherit pkgs;
     wallpaperFile = ../wallpapers/mountain_night_sky-wallpaper-3840x1200.jpg;
   };
+
   custom-sddm-astro-mountain_range_with_snow_dark = import ./custom-sddm-astro-package/package.nix {
     inherit pkgs;
     wallpaperFile = ../wallpapers/a_mountain_range_with_snow_on_top.jpeg;
@@ -38,11 +38,6 @@ in
 
   odroid-h4-ultra-adguard-installer = installerScriptPackage {
     name = "odroid-h4-ultra-adguard-installer";
-    inherit pkgs;
-  };
-
-  odroid-h4-ultra-mpv-installer = installerScriptPackage {
-    name = "odroid-h4-ultra-mpv-installer";
     inherit pkgs;
   };
 }

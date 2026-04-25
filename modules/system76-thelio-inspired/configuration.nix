@@ -102,6 +102,8 @@
     variant = "";
   };
 
+  services.winbox.enable = true;
+
   services.hardware.openrgb.enable = true;
 
   # Enable CUPS to print documents.

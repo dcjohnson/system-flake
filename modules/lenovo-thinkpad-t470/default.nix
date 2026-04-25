@@ -42,6 +42,9 @@
         cups-browsed
       ];
     };
+
+    services.winbox.enable = true;
+
     services.rpcbind.enable = true;
 
     # Configure keymap in X11
