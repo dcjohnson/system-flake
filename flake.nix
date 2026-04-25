@@ -47,10 +47,8 @@
         hostPlatform = system;
         overlays = [
           (final: prev: {
-            flake-packages = {
-              installers = import ./pkgs/packages.nix {
-                pkgs = final;
-              };
+            flake-packages = import ./pkgs/packages.nix {
+              pkgs = final;
             };
             external-packages = {
               schwab-auto-trader = final.callPackage "${inputs.schwab-auto-trader}/package.nix" {

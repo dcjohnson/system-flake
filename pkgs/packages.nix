@@ -26,18 +26,20 @@ in
     wallpaperFile = ../wallpapers/a_mountain_range_with_snow_on_top.jpeg;
   };
 
-  odroid-h4-plus-nas-installer = installerScriptPackage {
-    name = "odroid-h4-plus-nas-installer";
-    inherit pkgs;
-  };
+  installers = {
+    odroid-h4-plus-nas-installer = installerScriptPackage {
+      name = "odroid-h4-plus-nas-installer";
+      inherit pkgs;
+    };
 
-  odroid-h4-ultra-schwab-installer = installerScriptPackage {
-    name = "odroid-h4-ultra-schwab-installer";
-    inherit pkgs;
-  };
+    odroid-h4-ultra-schwab-installer = installerScriptPackage {
+      name = "odroid-h4-ultra-schwab-installer";
+      inherit pkgs;
+    };
 
-  odroid-h4-ultra-adguard-installer = installerScriptPackage {
-    name = "odroid-h4-ultra-adguard-installer";
-    inherit pkgs;
+    odroid-h4-ultra-adguard-installer = installerScriptPackage {
+      name = "odroid-h4-ultra-adguard-installer";
+      inherit pkgs;
+    };
   };
 }
