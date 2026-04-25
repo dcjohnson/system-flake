@@ -63,7 +63,7 @@
             Persistent = true;
           };
           sources = [
-            "nasguest@192.168.200.2::nas"
+            "nasguest@nas.homenent::nas"
           ];
           settings = {
             archive = true;

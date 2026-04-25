@@ -58,7 +58,7 @@
             allowedIPs = [
               "0.0.0.0/0"
             ];
-            endpoint = "104.9.83.162:13231";
+            endpoint = "99.71.129.55:13231";
             persistentKeepalive = 25;
           }
         ];
