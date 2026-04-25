@@ -43,7 +43,7 @@
       ];
     };
 
-    services.winbox.enable = true;
+    programs.winbox.enable = true;
 
     services.rpcbind.enable = true;
 
