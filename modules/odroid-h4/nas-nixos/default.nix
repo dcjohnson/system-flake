@@ -46,7 +46,6 @@
       enable = true;
       settings = {
         globalSection = {
-          address = "nas.homenet";
           gid = "nas";
           "max connections" = 4;
           uid = "nasguest";
